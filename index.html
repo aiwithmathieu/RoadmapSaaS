@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+<title>Roadmap Produit — SaaS Analytics & Coaching</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗺️</text></svg>"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:'DM Sans',system-ui,sans-serif;background:#f1f5f9;-webkit-font-smoothing:antialiased}
+::-webkit-scrollbar{width:5px;height:5px}::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:3px}
+.drop-line{height:3px;border-radius:2px;background:#3b82f6;margin:2px 8px}
+.tab-hl{animation:pt .5s ease infinite}@keyframes pt{0%,100%{background:#fef3c7}50%{background:#fde68a}}
+.cal-bar{transition:left .08s,width .08s}
+.rh{width:8px;min-width:8px;cursor:col-resize;background:rgba(255,255,255,.4);opacity:0;transition:opacity .15s;flex-shrink:0}
+.cal-bar:hover .rh{opacity:1}
+.rm-btn{position:absolute;top:-6px;right:-6px;width:16px;height:16px;border-radius:50%;background:#ef4444;color:#fff;font-size:9px;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transition:opacity .15s;z-index:10;border:2px solid #fff}
+.cal-bar:hover .rm-btn{opacity:1}
+@media(max-width:768px){.dk{display:none!important}.mc{grid-template-columns:1fr!important}}
+@media(min-width:769px){.mo{display:none!important}}
+</style>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['DM Sans','system-ui','sans-serif']}}}}</script>
+</head>
+<body><div id="root"></div>
+<script type="text/babel">
+const{useState,useRef,useCallback,useMemo,useEffect}=React;
+const isMob=/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)||window.innerWidth<768;
+
+/* ═══ SVG LOGOS ═══ */
+const LS={
+"supabase-auth":`<svg viewBox="0 0 109 113" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M63.7 110.3c-2.6 3.3-8.1 1.6-8.2-2.6l-1.5-57.7h39.2c7.1 0 11 8.2 6.5 13.7L63.7 110.3z" fill="#3ECF8E"/><path d="M45.3 2.7c2.6-3.3 8.1-1.6 8.2 2.6l.7 57.7H16c-7.1 0-11-8.2-6.5-13.7L45.3 2.7z" fill="#3ECF8E"/></svg>`,
+"nextjs":`<svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg"><circle cx="90" cy="90" r="90" fill="#000"/><path d="M149.5 157.3L75.3 58.5H58.5v63h13.4V76.6l68.8 92.4a90 90 0 008.8-11.7z" fill="url(#nb)"/><path d="M122.4 58.5h-13.3v63h13.3z" fill="url(#nc)"/><defs><linearGradient id="nb" x1="106" y1="62" x2="142" y2="156"><stop stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><linearGradient id="nc" x1="116" y1="59" x2="116" y2="110"><stop stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs></svg>`,
+"cursor":`<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="5" fill="#1a1a1a"/><path d="M12 4l7 4.5v7L12 20l-7-4.5v-7L12 4z" fill="none" stroke="#888" stroke-width="1.2"/><path d="M12 4l7 4.5L12 13 5 8.5L12 4z" fill="#ccc"/><path d="M12 13l7-4.5v7L12 20v-7z" fill="#999"/><path d="M12 13L5 8.5v7L12 20v-7z" fill="#bbb"/></svg>`,
+"tailwind":`<svg viewBox="0 0 54 33" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M27 0c-7.2 0-11.7 3.6-13.5 10.8 2.7-3.6 5.85-4.95 9.45-4.05 2.05.51 3.52 2 5.15 3.65C30.74 13.09 33.81 16.2 40.5 16.2c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.05-.51-3.52-2-5.15-3.65C36.76 3.11 33.69 0 27 0zM13.5 16.2C6.3 16.2 1.8 19.8 0 27c2.7-3.6 5.85-4.95 9.45-4.05 2.05.51 3.52 2 5.15 3.65C17.24 29.29 20.31 32.4 27 32.4c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.05-.51-3.52-2-5.15-3.65C23.26 19.31 20.19 16.2 13.5 16.2z" fill="#06B6D4"/></svg>`,
+"claude-api":`<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#E8613C"/><path d="M12 3l1.8 5.5H19.5l-4.6 3.3 1.8 5.5L12 14l-4.7 3.3 1.8-5.5-4.6-3.3h5.7L12 3z" fill="#fff"/></svg>`,
+"soniox":`<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="#7C3AED"/><path d="M9 8v8l7-4z" fill="#fff"/></svg>`,
+"trigger-dev":`<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="5" fill="#1a1a1a"/><path d="M12 3L22 20H8L5 14.5 12 3z" fill="url(#tg)"/><path d="M10 13l2-3.5 2 3.5-2 2-2-2z" fill="#1a1a1a"/><defs><linearGradient id="tg" x1="8" y1="20" x2="18" y2="5"><stop stop-color="#39FF14"/><stop offset="1" stop-color="#B8FF00"/></linearGradient></defs></svg>`,
+"stripe":`<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="4" fill="#635BFF"/><path d="M11.5 8.5c0-.83.68-1.15 1.8-1.15 1.61 0 3.64.49 5.25 1.36V4.53A14 14 0 0013.3 3.8c-3.64 0-6.06 1.9-6.06 5.07 0 4.95 6.81 4.16 6.81 6.3 0 .98-.86 1.3-2.05 1.3-1.77 0-4.04-.73-5.83-1.71v4.27a14.8 14.8 0 005.83 1.22c3.73 0 6.3-1.84 6.3-5.07C18.3 10.2 11.5 11.17 11.5 8.5z" fill="#fff"/></svg>`,
+"mips":`<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#00C244"/><path d="M7 12h10M12 7v10" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/></svg>`,
+"vercel":`<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 19.5h20L12 2z" fill="#000"/></svg>`,
+"makerkit":`<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#137CBD"/><path d="M7 7h10v2H7zm0 4h7v2H7zm0 4h10v2H7z" fill="#fff"/></svg>`,
+"resend":`<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M2 6l10 6 10-6M2 6v12h20V6" stroke="#000" stroke-width="2" fill="none"/></svg>`,
+"sentry":`<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="#362D59"/><text x="12" y="16" text-anchor="middle" font-size="11" fill="#fff" font-weight="bold">S</text></svg>`,
+"posthog":`<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="11" fill="#F9BD2B"/><circle cx="9" cy="10" r="2" fill="#000"/><circle cx="15" cy="10" r="2" fill="#000"/></svg>`,
+"github":`<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .3c-6.63 0-12 5.37-12 12 0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58 0-.28-.01-1.04-.02-2.04-3.34.72-4.04-1.61-4.04-1.61-.55-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.3 3.5 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.14 3 .4c2.28-1.55 3.29-1.23 3.29-1.23.64 1.65.24 2.87.12 3.18.76.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22 0 1.6-.01 2.9-.01 3.29 0 .31.21.69.82.57C20.57 22.1 24 17.6 24 12.3c0-6.63-5.37-12-12-12" fill="#181717"/></svg>`,
+};
+LS["supabase-db"]=LS["supabase-auth"];LS["supabase-storage"]=LS["supabase-auth"];LS["supabase-rls"]=LS["supabase-auth"];
+
+/* ═══ CONSTANTS ═══ */
+const VV=["V1","V2","V3"],VL={V1:"MVP facturable",V2:"Rétention & expansion",V3:"Différenciation marché"};
+const DF=["🟢","🟡","🔴"],STS=["📋 À faire","🔨 En cours","✅ Terminé"];
+const SC={"📋 À faire":"#9ca3af","🔨 En cours":"#f59e0b","✅ Terminé":"#22c55e"};
+const SO={"🔨 En cours":0,"📋 À faire":1,"✅ Terminé":2};
+const TC={All:{h:"#1e293b"},V1:{h:"#2563eb"},V2:{h:"#d97706"},V3:{h:"#7c3aed"},Timeline:{h:"#0f766e"}};
+const CC={V1:{bg:"bg-blue-50",bd:"border-blue-200",dg:"bg-blue-100"},V2:{bg:"bg-amber-50",bd:"border-amber-200",dg:"bg-amber-100"},V3:{bg:"bg-violet-50",bd:"border-violet-200",dg:"bg-violet-100"}};
+const PLC={V1:"#3b82f6",V2:"#f59e0b",V3:"#8b5cf6"};const ALC="#ef4444";
+
+// Feature groups/families
+const GROUPS={
+  "🔐 Auth & Sécurité":[1,16],
+  "📞 Upload & Pipeline":[2,3,4,5],
+  "🧠 Analyse & Métriques":[6,7],
+  "📊 Dashboards & UX":[8,9,10,11,12,13],
+  "💬 Feedback & Coaching":[14],
+  "💳 Paiement":[15],
+  "📁 Stockage & Scripts":[17,18],
+  "👥 Leads & Attribution":[19,23],
+  "💰 Commissions & Classement":[20,21],
+  "📧 Relances & Notifications":[22,25],
+  "🤝 Affiliation":[24],
+  "🤖 IA Avancée":[26,27,28],
+  "⚡ Automatisation":[29],
+  "📈 Analytics & Intégrations":[30,31,32],
+};
+const getGroup=id=>{for(const[g,ids]of Object.entries(GROUPS))if(ids.includes(id))return g;return"📦 Autre";};
+
+const TT=[{id:"supabase-auth",n:"Supabase Auth",c:"Auth"},{id:"supabase-db",n:"Supabase DB",c:"DB"},{id:"supabase-storage",n:"Supabase Storage",c:"Storage"},{id:"supabase-rls",n:"Supabase RLS",c:"Security"},{id:"nextjs",n:"Next.js",c:"Framework"},{id:"cursor",n:"Cursor",c:"IDE"},{id:"tailwind",n:"Tailwind CSS",c:"Frontend"},{id:"claude-api",n:"Claude API",c:"IA"},{id:"soniox",n:"Soniox",c:"Transcription"},{id:"trigger-dev",n:"Trigger.dev",c:"Async"},{id:"stripe",n:"Stripe",c:"Paiement"},{id:"mips",n:"MIPS",c:"Paiement"},{id:"vercel",n:"Vercel",c:"Hosting"},{id:"makerkit",n:"MakerKit",c:"Boilerplate"},{id:"resend",n:"Resend",c:"Email"},{id:"sentry",n:"Sentry",c:"Monitoring"},{id:"posthog",n:"PostHog",c:"Analytics"},{id:"github",n:"GitHub",c:"VCS"}];
+const TM=Object.fromEntries(TT.map(t=>[t.id,t]));
+
+const now=new Date().toISOString();
+const mk=(id,t,v,df,du,st,ps,pe,o,grp,as,ae)=>({id,title:t,version:v,difficulty:df,duration:du,status:"📋 À faire",note:"",stack:st,history:[{status:"📋 À faire",date:now}],plannedStart:ps,plannedEnd:pe,actualStart:as||"",actualEnd:ae||"",order:o,includeWeekendPlanned:false,includeWeekendActual:false,group:grp||getGroup(id)});
+
+const INIT=[
+  mk(1,"Auth multi-tenant (MakerKit)","V1","🟢","1-2j",["supabase-auth","makerkit","nextjs"],"2026-03-16","2026-03-17",0),
+  mk(2,"Upload audio closeur","V1","🟢","1j",["nextjs","supabase-db"],"2026-03-18","2026-03-18",1),
+  mk(3,"Case RGPD upload","V1","🟢","0.5j",["cursor"],"2026-03-19","2026-03-19",2),
+  mk(4,"Statut call upload","V1","🟢","0.5j",["cursor","supabase-db"],"2026-03-20","2026-03-20",3),
+  mk(5,"Transcription Soniox (FR)","V1","🟡","2-3j",["soniox","trigger-dev","supabase-db"],"2026-03-09","2026-03-18",4,undefined,"2026-03-09","2026-03-18"),
+  mk(6,"Métriques déterministes","V1","🟡","2j",["trigger-dev","supabase-db"],"2026-03-23","2026-03-24",5),
+  mk(7,"Analyse IA Claude","V1","🟡","2-3j",["claude-api","trigger-dev","supabase-db"],"2026-03-25","2026-03-27",6),
+  mk(8,"États async pipeline","V1","🟡","1-2j",["cursor","supabase-db"],"2026-03-30","2026-03-31",7),
+  mk(9,"Rapport IA panel","V1","🟢","1-2j",["cursor","tailwind"],"2026-04-01","2026-04-02",8),
+  mk(10,"Dashboard admin KPIs","V1","🟡","2-3j",["cursor","supabase-db","tailwind"],"2026-04-03","2026-04-07",9),
+  mk(11,"Liste closeurs","V1","🟢","1j",["cursor","supabase-db"],"2026-04-08","2026-04-08",10),
+  mk(12,"Fiche détail closeur","V1","🟢","1j",["cursor","supabase-db"],"2026-04-09","2026-04-09",11),
+  mk(13,"Dashboard closeur","V1","🟢","1j",["cursor","supabase-db"],"2026-04-10","2026-04-10",12),
+  mk(14,"Feedback coach → closeur","V1","🟢","2j",["cursor","supabase-db","supabase-rls"],"2026-04-13","2026-04-14",13),
+  mk(15,"Abonnement MIPS ⚠️","V1","🟡","2-3j",["mips","nextjs"],"2026-04-15","2026-04-17",14),
+  mk(16,"RLS Supabase tables","V1","🟢","1j",["supabase-rls","supabase-db"],"2026-04-20","2026-04-20",15),
+  mk(17,"Stockage audio","V2","🟡","2j",["supabase-storage"],"","",0),
+  mk(18,"Bibliothèque scripts call","V2","🟡","2-3j",["cursor","supabase-db"],"","",1),
+  mk(19,"Attribution leads admin","V2","🟡","3j",["cursor","supabase-db"],"","",2),
+  mk(20,"Gestion commissions","V2","🟡","3-4j",["supabase-db","cursor"],"","",3),
+  mk(21,"Top 5 closeurs pondéré","V2","🟢","1-2j",["supabase-db","cursor"],"","",4),
+  mk(22,"Séquences relance emails","V2","🟡","3-4j",["cursor","supabase-db"],"","",5),
+  mk(23,"Import CSV leads","V2","🟡","3-4j",["cursor","supabase-db"],"","",6),
+  mk(24,"Affiliation/referral","V2","🔴","4-5j",["supabase-db","nextjs","stripe"],"","",7),
+  mk(25,"Notifications in-app","V2","🟡","2-3j",["supabase-db","cursor"],"","",8),
+  mk(26,"Simulateur IA appel","V3","🔴","8-12j",["claude-api","cursor","supabase-db"],"","",0),
+  mk(27,"Scripts training simulateur","V3","🟡","2-3j",["cursor","supabase-db"],"","",1),
+  mk(28,"IA attribution leads","V3","🔴","3-4j",["claude-api","supabase-db"],"","",2),
+  mk(29,"Automatisation relances","V3","🔴","4-5j",["trigger-dev","resend","supabase-db"],"","",3),
+  mk(30,"Comparaison cohortes","V3","🟢","1-2j",["supabase-db","cursor"],"","",4),
+  mk(31,"Pipeline Kanban","V3","🟡","3-4j",["cursor","supabase-db"],"","",5),
+  mk(32,"API publique / webhooks","V3","🔴","5-7j",["nextjs","supabase-db"],"","",6),
+];
+INIT[4].status="🔨 En cours";INIT[4].history.push({status:"🔨 En cours",date:"2026-03-09T08:00:00.000Z"});INIT[4].includeWeekendActual=true;INIT[4].includeWeekendPlanned=true;
+
+/* ═══ HELPERS ═══ */
+const pDu=d=>{if(!d)return 0;const n=d.match(/[\d.]+/g);if(!n)return 0;return n.length>1?(+n[0]+ +n[1])/2:+n[0];};
+const fD=iso=>iso?new Date(iso).toLocaleDateString("fr-FR",{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"}):"—";
+const dB=(a,b)=>(!a||!b)?0:Math.round((new Date(b)-new Date(a))/864e5)+1;
+const aDay=(s,n)=>{const d=new Date(s);d.setDate(d.getDate()+n);return d.toISOString().split("T")[0];};
+const tS=d=>d.toISOString().split("T")[0];
+const sortF=it=>[...it].sort((a,b)=>{const oa=SO[a.status]??1,ob=SO[b.status]??1;return oa!==ob?oa-ob:a.order-b.order;});
+const getMon=d=>{const r=new Date(d);const dy=r.getDay();r.setDate(r.getDate()-(dy===0?6:dy-1));r.setHours(0,0,0,0);return r;};
+const isWD=d=>{const day=new Date(d).getDay();return day>=1&&day<=5;};
+const nextWD=ds=>{let d=new Date(ds);while(d.getDay()===0||d.getDay()===6)d.setDate(d.getDate()+1);return tS(d);};
+const prevWD=ds=>{let d=new Date(ds);while(d.getDay()===0||d.getDay()===6)d.setDate(d.getDate()-1);return tS(d);};
+const addWD=(start,days)=>{let d=new Date(start);let rem=days-1;while(rem>0){d.setDate(d.getDate()+1);if(d.getDay()>=1&&d.getDay()<=5)rem--;}return tS(d);};
+// Snap date to workday if needed
+const snapDate=(ds,inclWE)=>inclWE?ds:isWD(ds)?ds:nextWD(ds);
+
+/* ═══ SMALL COMPONENTS ═══ */
+function TL({tid,sz=13}){const s=LS[tid];if(!s)return React.createElement('div',{style:{width:sz,height:sz,borderRadius:"50%",background:"#d1d5db",flexShrink:0}});return React.createElement('div',{style:{width:sz,height:sz,flexShrink:0},dangerouslySetInnerHTML:{__html:s}});}
+function SLo({ids,mx=4}){const sh=ids.slice(0,mx),ex=ids.length-mx;return React.createElement('div',{className:"flex items-center flex-shrink-0 mr-1"},sh.map((id,i)=>React.createElement('div',{key:id,className:"rounded-full bg-white border border-gray-200 flex items-center justify-center",style:{width:20,height:20,padding:2,marginLeft:i>0?-6:0,zIndex:mx-i},title:TM[id]?.n},React.createElement(TL,{tid:id,sz:13}))),ex>0&&React.createElement('div',{className:"rounded-full bg-gray-200 flex items-center justify-center text-gray-500",style:{width:20,height:20,fontSize:8,fontWeight:700,marginLeft:-6}},"+"+ex));}
+function PB({d,t,c="#fff"}){const p=t?Math.round(d/t*100):0;return React.createElement('div',{className:"w-full rounded-full h-1.5",style:{background:c+"33"}},React.createElement('div',{className:"h-1.5 rounded-full transition-all duration-500",style:{width:p+"%",background:c}}));}
+
+/* ═══ FEATURE CARD ═══ */
+function FC({f,idx,c,onClick,onDS,onDE,doI,onDI}){
+  const sb=f.status.includes("Terminé")?"bg-green-100 text-green-800":f.status.includes("En cours")?"bg-yellow-100 text-yellow-800":"bg-gray-100 text-gray-600";
+  return React.createElement(React.Fragment,null,
+    doI===idx&&React.createElement('div',{className:"drop-line"}),
+    React.createElement('div',{draggable:true,onDragStart:e=>{e.dataTransfer.setData("application/json",JSON.stringify({id:f.id,version:f.version,src:"card"}));e.dataTransfer.effectAllowed="move";onDS(f.id);},onDragEnd:onDE,onDragOver:e=>{e.preventDefault();e.stopPropagation();onDI(idx);},onClick:onClick,
+      className:"group relative flex items-start gap-1.5 p-2.5 rounded-lg border "+c.bd+" "+c.bg+" hover:shadow-md transition-all cursor-pointer",style:{borderLeftWidth:5,borderLeftColor:SC[f.status]||"#d1d5db"}},
+      React.createElement(SLo,{ids:f.stack,mx:3}),
+      React.createElement('div',{className:"flex-1 min-w-0"},
+        React.createElement('div',{className:"flex items-start justify-between gap-1"},React.createElement('p',{className:"text-[13px] font-semibold text-gray-800 leading-snug"},f.title),React.createElement('span',{className:"text-sm flex-shrink-0"},f.difficulty)),
+        React.createElement('div',{className:"flex items-center gap-1.5 mt-1 flex-wrap"},
+          React.createElement('span',{className:"text-[10px] px-1.5 py-0.5 rounded-full font-semibold "+sb},f.status),
+          React.createElement('span',{className:"text-[10px] text-gray-500"},f.duration),
+          f.plannedStart&&React.createElement('span',{className:"text-[10px] text-gray-400"},f.plannedStart.slice(5)),
+          f.note&&React.createElement('span',{className:"text-[10px]"},"📝")))));
+}
+
+/* ═══ TOOL PICKER ═══ */
+function TP({sel,onChange}){const[op,setOp]=useState(false);const av=TT.filter(t=>!sel.includes(t.id));const gr={};av.forEach(t=>{if(!gr[t.c])gr[t.c]=[];gr[t.c].push(t);});
+  return React.createElement('div',null,React.createElement('label',{className:"block text-xs font-bold text-gray-500 uppercase mb-1"},"Stack"),
+    React.createElement('div',{className:"flex flex-wrap gap-1.5 mb-2"},sel.map(tid=>{const t=TM[tid];if(!t)return null;return React.createElement('span',{key:tid,className:"inline-flex items-center gap-1 bg-gray-100 border border-gray-200 rounded-full pl-1 pr-1 py-0.5"},React.createElement(TL,{tid,sz:13}),React.createElement('span',{className:"text-xs text-gray-700"},t.n),React.createElement('button',{onClick:()=>onChange(sel.filter(s=>s!==tid)),className:"ml-0.5 text-gray-400 hover:text-red-500"},"×"));}),React.createElement('button',{onClick:()=>setOp(!op),className:"text-[11px] text-blue-600 border border-dashed border-blue-300 rounded-full px-2 py-0.5 hover:bg-blue-50"},"+Ajouter")),
+    op&&React.createElement('div',{className:"border rounded-lg bg-white shadow-lg max-h-48 overflow-y-auto p-2 space-y-1"},Object.entries(gr).map(([cat,ts])=>React.createElement('div',{key:cat},React.createElement('p',{className:"text-[9px] font-bold text-gray-400 uppercase mb-0.5"},cat),React.createElement('div',{className:"flex flex-wrap gap-1"},ts.map(t=>React.createElement('button',{key:t.id,onClick:()=>{onChange([...sel,t.id]);setOp(false);},className:"inline-flex items-center gap-1 bg-gray-50 border rounded-full px-1.5 py-0.5 hover:bg-blue-50"},React.createElement(TL,{tid:t.id,sz:12}),React.createElement('span',{className:"text-[11px]"},t.n))))))));}
+
+/* ═══ EDIT PANEL ═══ */
+function EP({feature:f,onSave,onClose,onDelete}){
+  const[d,setD]=useState({...f,stack:[...f.stack]});const s=(k,v)=>setD(p=>({...p,[k]:v}));
+  return React.createElement('div',{className:"fixed inset-0 z-50 flex "+(isMob?"":"justify-end"),onClick:onClose},
+    React.createElement('div',{className:"absolute inset-0 bg-black/30 backdrop-blur-sm"}),
+    React.createElement('div',{className:"relative "+(isMob?"w-full":"w-full max-w-lg")+" bg-white shadow-2xl h-full overflow-y-auto",onClick:e=>e.stopPropagation()},
+      React.createElement('div',{className:"sticky top-0 bg-white border-b px-4 py-3 flex items-center justify-between z-10"},React.createElement('h2',{className:"text-base font-bold"},"Éditer"),
+        React.createElement('div',{className:"flex items-center gap-2"},
+          React.createElement('button',{onClick:()=>{if(confirm("Supprimer cette feature ?"))onDelete(f.id);},className:"text-xs text-red-500 hover:text-red-700 font-semibold px-2 py-1 border border-red-200 rounded-lg hover:bg-red-50"},"🗑 Supprimer"),
+          React.createElement('button',{onClick:onClose,className:"text-xl p-1 hover:bg-gray-100 rounded"},"✕"))),
+      React.createElement('div',{className:"p-4 space-y-3"},
+        React.createElement('div',null,React.createElement('label',{className:"block text-xs font-bold text-gray-500 uppercase mb-1"},"Titre"),React.createElement('input',{className:"w-full border rounded-lg px-3 py-2 text-sm",value:d.title,onChange:e=>s("title",e.target.value)})),
+        React.createElement('div',{className:"grid grid-cols-3 gap-2"},
+          React.createElement('div',null,React.createElement('label',{className:"block text-xs font-bold text-gray-500 uppercase mb-1"},"Version"),React.createElement('select',{className:"w-full border rounded-lg px-2 py-2 text-sm",value:d.version,onChange:e=>s("version",e.target.value)},VV.map(v=>React.createElement('option',{key:v},v)))),
+          React.createElement('div',null,React.createElement('label',{className:"block text-xs font-bold text-gray-500 uppercase mb-1"},"Difficulté"),React.createElement('select',{className:"w-full border rounded-lg px-2 py-2 text-sm",value:d.difficulty,onChange:e=>s("difficulty",e.target.value)},DF.map(x=>React.createElement('option',{key:x},x)))),
+          React.createElement('div',null,React.createElement('label',{className:"block text-xs font-bold text-gray-500 uppercase mb-1"},"Durée"),React.createElement('input',{className:"w-full border rounded-lg px-2 py-2 text-sm",value:d.duration,onChange:e=>s("duration",e.target.value)}))),
+        React.createElement('div',null,React.createElement('label',{className:"block text-xs font-bold text-gray-500 uppercase mb-1"},"Statut"),React.createElement('div',{className:"flex gap-2 flex-wrap"},STS.map(st=>React.createElement('button',{key:st,onClick:()=>s("status",st),className:"px-3 py-1.5 rounded-lg text-xs font-semibold border "+(d.status===st?"bg-gray-800 text-white border-gray-800":"bg-white text-gray-600 border-gray-300 hover:bg-gray-50")},st)))),
+        React.createElement('div',{className:"grid grid-cols-2 gap-2"},["plannedStart","plannedEnd","actualStart","actualEnd"].map(k=>React.createElement('div',{key:k},React.createElement('label',{className:"block text-xs font-bold text-gray-500 uppercase mb-1"},k.replace("planned","Planned ").replace("actual","Actual ").replace("Start","start").replace("End","end")),React.createElement('input',{type:"date",className:"w-full border rounded-lg px-2 py-2 text-sm",value:d[k],onChange:e=>s(k,e.target.value)})))),
+        React.createElement('div',{className:"flex flex-col gap-2"},
+          React.createElement('label',{className:"flex items-center gap-2 cursor-pointer"},React.createElement('input',{type:"checkbox",checked:d.includeWeekendPlanned||false,onChange:e=>s("includeWeekendPlanned",e.target.checked),className:"w-4 h-4 rounded"}),React.createElement('span',{className:"text-xs font-semibold text-gray-600"},"Planned : inclure les week-ends")),
+          React.createElement('label',{className:"flex items-center gap-2 cursor-pointer"},React.createElement('input',{type:"checkbox",checked:d.includeWeekendActual||false,onChange:e=>s("includeWeekendActual",e.target.checked),className:"w-4 h-4 rounded"}),React.createElement('span',{className:"text-xs font-semibold text-gray-600"},"Réel : inclure les week-ends"))),
+        React.createElement('div',null,React.createElement('label',{className:"block text-xs font-bold text-gray-500 uppercase mb-1"},"Groupe"),React.createElement('input',{className:"w-full border rounded-lg px-3 py-2 text-sm",value:d.group||"",onChange:e=>s("group",e.target.value)})),
+        React.createElement(TP,{sel:d.stack,onChange:v=>s("stack",v)}),
+        React.createElement('div',null,React.createElement('label',{className:"block text-xs font-bold text-gray-500 uppercase mb-1"},"Note"),React.createElement('textarea',{className:"w-full border rounded-lg px-3 py-2 text-sm",value:d.note,onChange:e=>s("note",e.target.value),rows:2,placeholder:"Note..."})),
+        React.createElement('div',null,React.createElement('label',{className:"block text-xs font-bold text-gray-500 uppercase mb-1"},"Historique"),React.createElement('div',{className:"bg-gray-50 rounded-lg p-2 max-h-24 overflow-y-auto space-y-1"},d.history.map((h,i)=>React.createElement('div',{key:i,className:"flex items-center gap-2 text-xs"},React.createElement('div',{className:"w-2 h-2 rounded-full",style:{background:SC[h.status]||"#9ca3af"}}),React.createElement('span',{className:"font-medium text-gray-700"},h.status),React.createElement('span',{className:"text-gray-400"},fD(h.date)))))),
+        React.createElement('button',{onClick:()=>{onSave(d);onClose();},className:"w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 rounded-lg text-sm"},"Sauvegarder"))));
+}
+
+/* ═══ TIMELINE ═══ */
+function TLine({features:fs,setFs,onEdit}){
+  const[wO,setWO]=useState(0),[nW,setNW]=useState(2),[fV,setFV]=useState("All"),[resizing,setResizing]=useState(null);
+  const rRefs=useRef({});
+  const mon=useMemo(()=>getMon(new Date(new Date().getFullYear(),new Date().getMonth(),new Date().getDate()+wO*7)),[wO]);
+  const weeks=useMemo(()=>{const w=[];for(let i=0;i<nW;i++){const ds=[];for(let j=0;j<7;j++){const d=new Date(mon);d.setDate(d.getDate()+i*7+j);ds.push(d);}w.push(ds);}return w;},[mon,nW]);
+  const sched=fs.filter(f=>f.plannedStart&&f.plannedEnd).filter(f=>fV==="All"||f.version===fV).sort((a,b)=>a.plannedStart.localeCompare(b.plannedStart));
+  const unsched=fs.filter(f=>!f.plannedStart||!f.plannedEnd).filter(f=>fV==="All"||f.version===fV);
+  const isWE=d=>d.getDay()===0||d.getDay()===6;const isT=d=>tS(d)===tS(new Date());
+  const wb=fs.filter(f=>f.plannedStart&&f.plannedEnd&&f.actualStart&&f.actualEnd);
+  const delta=wb.reduce((s,f)=>s+dB(f.actualStart,f.actualEnd),0)-wb.reduce((s,f)=>s+dB(f.plannedStart,f.plannedEnd),0);
+
+  function bIW(start,end,wk){const ws=wk[0],we=wk[6];const s=new Date(start),e=new Date(end);if(e<ws||s>we)return null;const cs=s<ws?ws:s;const ce=e>we?we:e;return{left:(Math.round((cs-ws)/864e5)/7*100)+"%",width:(Math.max(1,Math.round((ce-cs)/864e5)+1)/7*100)+"%"};}
+
+  const calDrop=(e,wk)=>{e.preventDefault();try{const data=JSON.parse(e.dataTransfer.getData("application/json"));if(!data.id)return;const rect=e.currentTarget.getBoundingClientRect();const di=Math.min(6,Math.max(0,Math.floor((e.clientX-rect.left)/rect.width*7)));let td=tS(wk[di]);const feat=fs.find(f=>f.id===data.id);const inclWE=data.type==="actual"?feat?.includeWeekendActual:feat?.includeWeekendPlanned;td=snapDate(td,inclWE);const dur=dB(feat?.plannedStart,feat?.plannedEnd)||Math.max(1,Math.round(pDu(feat?.duration)));const endD=inclWE?aDay(td,dur-1):addWD(td,dur);setFs(p=>p.map(f=>{if(f.id!==data.id)return f;if(data.type==="actual")return{...f,actualStart:td,actualEnd:endD};return{...f,plannedStart:td,plannedEnd:endD};}));}catch(x){}};
+
+  const hResize=useCallback(e=>{if(!resizing)return;let cW=null,mD=Infinity;weeks.forEach((wk,wi)=>{const ref=rRefs.current[wi];if(!ref)return;const r=ref.getBoundingClientRect();const d=Math.abs(e.clientY-(r.top+r.height/2));if(d<mD){mD=d;cW={wk,ref};}});if(!cW)return;const rect=cW.ref.getBoundingClientRect();const di=Math.min(6,Math.max(0,Math.floor((e.clientX-rect.left)/rect.width*7)));let td=tS(cW.wk[di]);const feat=fs.find(f=>f.id===resizing.id);const inclWE=resizing.type==="actual"?feat?.includeWeekendActual:feat?.includeWeekendPlanned;
+    setFs(p=>p.map(f=>{if(f.id!==resizing.id)return f;const sk=resizing.type==="actual"?"actualStart":"plannedStart",ek=resizing.type==="actual"?"actualEnd":"plannedEnd";
+      if(resizing.edge==="right"){const snapped=inclWE?td:(isWD(td)?td:prevWD(td));if(snapped>=f[sk])return{...f,[ek]:snapped};}
+      else{const snapped=inclWE?td:(isWD(td)?td:nextWD(td));if(snapped<=f[ek])return{...f,[sk]:snapped};}return f;}));},[resizing,weeks,fs,setFs]);
+
+  useEffect(()=>{if(!resizing)return;const up=()=>setResizing(null);window.addEventListener("mousemove",hResize);window.addEventListener("mouseup",up);return()=>{window.removeEventListener("mousemove",hResize);window.removeEventListener("mouseup",up);};},[resizing,hResize]);
+
+  const rmDates=(fId,type)=>{setFs(p=>p.map(f=>{if(f.id!==fId)return f;if(type==="actual")return{...f,actualStart:"",actualEnd:""};return{...f,plannedStart:"",plannedEnd:""};}));};
+
+  const rBar=(f,pos,color,type)=>{if(!pos)return null;const isA=type==="actual";
+    return React.createElement('div',{className:"absolute flex items-center rounded-md cursor-grab overflow-visible cal-bar",style:{top:isA?26:2,height:isA?20:22,left:pos.left,width:pos.width,background:color,opacity:isA?.8:.9,zIndex:isA?2:1},
+      draggable:true,onDragStart:e=>{e.dataTransfer.setData("application/json",JSON.stringify({id:f.id,type,src:"tl"}));},onClick:e=>{e.stopPropagation();onEdit(f.id);}},
+      React.createElement('div',{className:"rm-btn",onClick:e=>{e.stopPropagation();rmDates(f.id,type);}},"✕"),
+      React.createElement('div',{className:"rh h-full rounded-l-md",onMouseDown:e=>{e.stopPropagation();e.preventDefault();setResizing({id:f.id,type,edge:"left"});}}),
+      React.createElement('span',{className:"text-[10px] font-semibold text-white px-1 truncate flex-1"},f.title),
+      React.createElement('div',{className:"rh h-full rounded-r-md",onMouseDown:e=>{e.stopPropagation();e.preventDefault();setResizing({id:f.id,type,edge:"right"});}}));};
+
+  return React.createElement('div',{className:"bg-white rounded-xl border border-gray-200 overflow-hidden"},
+    React.createElement('div',{className:"flex items-center justify-between px-4 py-2 border-b bg-gray-50 flex-wrap gap-2"},
+      React.createElement('div',{className:"flex items-center gap-2"},
+        React.createElement('button',{onClick:()=>setWO(w=>w-1),className:"p-1.5 rounded hover:bg-gray-200 text-sm"},"◀"),
+        React.createElement('button',{onClick:()=>setWO(0),className:"text-xs font-semibold text-gray-600 px-2 py-1 rounded hover:bg-gray-200"},"Aujourd'hui"),
+        React.createElement('button',{onClick:()=>setWO(w=>w+1),className:"p-1.5 rounded hover:bg-gray-200 text-sm"},"▶"),
+        React.createElement('span',{className:"text-sm font-bold text-gray-800 capitalize ml-2"},mon.toLocaleDateString("fr-FR",{month:"long",year:"numeric"}))),
+      React.createElement('div',{className:"flex items-center gap-3 flex-wrap"},
+        wb.length>0&&React.createElement('div',{className:"text-xs font-bold px-2.5 py-1 rounded-full "+(delta>0?"bg-red-100 text-red-700":delta<0?"bg-green-100 text-green-700":"bg-gray-100 text-gray-600")},delta>0?"+"+delta+"j retard":delta<0?delta+"j avance":"Dans les temps"),
+        React.createElement('div',{className:"flex items-center gap-1 dk"},React.createElement('span',{className:"text-xs text-gray-500"},"Sem:"),[1,2,3,4].map(n=>React.createElement('button',{key:n,onClick:()=>setNW(n),className:"w-6 h-6 rounded text-xs font-bold "+(nW===n?"bg-gray-800 text-white":"bg-gray-100 text-gray-500 hover:bg-gray-200")},n))),
+        React.createElement('div',{className:"flex gap-1"},["All",...VV].map(v=>React.createElement('button',{key:v,onClick:()=>setFV(v),className:"text-xs px-2 py-1 rounded-full font-semibold "+(fV===v?"bg-gray-800 text-white":"bg-gray-100 text-gray-600 hover:bg-gray-200")},v))))),
+    React.createElement('div',{className:"overflow-x-auto"},weeks.map((wk,wi)=>{
+      const visF=sched.filter(f=>{const s=new Date(f.plannedStart),e=new Date(f.plannedEnd);const hA=f.actualStart&&f.actualEnd;const aS=hA?new Date(f.actualStart):null,aE=hA?new Date(f.actualEnd):null;return(e>=wk[0]&&s<=wk[6])||(hA&&aE>=wk[0]&&aS<=wk[6]);});
+      return React.createElement('div',{key:wi,className:"border-b border-gray-100"},
+        React.createElement('div',{className:"grid grid-cols-7"},wk.map((d,di)=>React.createElement('div',{key:di,className:"text-center py-1 text-xs border-r border-gray-100 "+(isWE(d)?"bg-gray-50 text-gray-400":"text-gray-600")+" "+(isT(d)?"bg-blue-50 font-bold text-blue-700":"")},React.createElement('div',{className:"text-[9px] uppercase"},d.toLocaleDateString("fr-FR",{weekday:"short"})),React.createElement('div',{className:"text-base font-bold"},d.getDate())))),
+        React.createElement('div',{ref:el=>rRefs.current[wi]=el,className:"relative",style:{minHeight:Math.max(10,visF.length*52+8)},onDragOver:e=>e.preventDefault(),onDrop:e=>calDrop(e,wk)},
+          wk.map((d,di)=>React.createElement('div',{key:di,className:"absolute top-0 bottom-0 border-r border-gray-50 "+(isWE(d)?"bg-gray-50/50":""),style:{left:(di/7*100)+"%",width:(1/7*100)+"%"}})),
+          visF.map((f,fi)=>{const pp=bIW(f.plannedStart,f.plannedEnd,wk);const ap=(f.actualStart&&f.actualEnd)?bIW(f.actualStart,f.actualEnd,wk):null;if(!pp&&!ap)return null;
+            return React.createElement('div',{key:f.id,className:"absolute left-0 right-0",style:{top:fi*52+4}},rBar(f,pp,PLC[f.version]||"#3b82f6","planned"),rBar(f,ap,ALC,"actual"),
+              pp&&!ap&&React.createElement('button',{className:"absolute text-[9px] text-gray-400 hover:text-red-500",style:{top:26,left:pp.left},onClick:()=>setFs(p=>p.map(x=>x.id===f.id?{...x,actualStart:x.plannedStart,actualEnd:x.plannedEnd}:x))},"📋 Dupliquer"));})));})),
+    unsched.length>0&&React.createElement('div',{className:"border-t px-4 py-3 bg-gray-50"},React.createElement('p',{className:"text-xs font-bold text-gray-500 uppercase mb-2"},"À planifier — glisser sur le calendrier"),
+      React.createElement('div',{className:"flex flex-wrap gap-1.5"},VV.map(v=>{const its=unsched.filter(f=>f.version===v);if(!its.length)return null;return React.createElement(React.Fragment,{key:v},React.createElement('span',{className:"text-[10px] font-bold text-gray-400 mr-1 self-center"},v+":"),its.map(f=>React.createElement('div',{key:f.id,draggable:true,onDragStart:e=>{e.dataTransfer.setData("application/json",JSON.stringify({id:f.id,type:"planned",src:"tl"}));},className:"inline-flex items-center gap-1 px-2 py-1 rounded-md text-[11px] font-semibold text-white cursor-grab",style:{background:PLC[v]}},f.title)));}))),
+    React.createElement('div',{className:"flex items-center gap-4 px-4 py-1.5 border-t bg-gray-50 text-[10px] text-gray-500"},
+      React.createElement('span',{className:"flex items-center gap-1"},React.createElement('span',{className:"w-3 h-2 rounded-sm",style:{background:"#3b82f6",display:"inline-block"}}),"Planned"),
+      React.createElement('span',{className:"flex items-center gap-1"},React.createElement('span',{className:"w-3 h-2 rounded-sm",style:{background:ALC,display:"inline-block"}}),"Réel"),
+      React.createElement('span',{className:"ml-auto dk"},"Resize gauche+droite · ✕ pour retirer · Cliquer pour éditer")));
+}
+
+/* ═══ STATS ═══ */
+function Stats({fs,all}){
+  const[showDetail,setShowDetail]=useState(false);
+  const t=fs.length,d=fs.filter(f=>f.status==="✅ Terminé").length,ip=fs.filter(f=>f.status==="🔨 En cours").length;
+  // Weighted progress: by duration days, not count
+  const totalDur=fs.reduce((s,f)=>s+pDu(f.duration),0);
+  const doneDur=fs.filter(f=>f.status==="✅ Terminé").reduce((s,f)=>s+pDu(f.duration),0);
+  const rem=totalDur-doneDur;
+  const pctW=totalDur?Math.round(doneDur/totalDur*100):0;
+  const wb=all.filter(f=>f.plannedStart&&f.plannedEnd&&f.actualStart&&f.actualEnd);
+  const pDays=wb.reduce((s,f)=>s+dB(f.plannedStart,f.plannedEnd),0);
+  const aDays=wb.reduce((s,f)=>s+dB(f.actualStart,f.actualEnd),0);
+  const dl=aDays-pDays;
+  return React.createElement('div',{className:"space-y-2 mb-4"},
+    React.createElement('div',{className:"grid grid-cols-3 md:grid-cols-6 gap-2"},
+      [{l:"Features",v:t,i:"📦"},{l:"Terminées",v:d+"/"+t,i:"✅"},{l:"En cours",v:ip,i:"🔨"},
+       {l:"Jours restants",v:"~"+rem.toFixed(0)+"j",i:"📅",info:true},
+       {l:"Outils",v:new Set(fs.flatMap(f=>f.stack)).size,i:"🔧"},
+       {l:"Plan vs Réel",v:wb.length?(dl>0?"+"+dl+"j":dl<0?dl+"j":"0j"):"—",i:"⏱",c:dl>0?"text-red-600":"text-green-600"}
+      ].map((s,i)=>React.createElement('div',{key:i,className:"bg-white rounded-xl border px-2 py-2 flex items-center gap-2 relative "+(s.info?"cursor-pointer":""),onClick:s.info?()=>setShowDetail(!showDetail):undefined},
+        React.createElement('span',{className:"text-lg"},s.i),
+        React.createElement('div',{className:"flex-1"},React.createElement('div',{className:"text-sm font-bold leading-tight "+(s.c||"text-gray-800")},s.v),React.createElement('div',{className:"text-[8px] text-gray-400 font-bold uppercase"},s.l)),
+        s.info&&React.createElement('span',{className:"text-blue-400 text-xs font-bold"},"ℹ️")))),
+    // Weighted progress bar
+    React.createElement('div',{className:"bg-white rounded-xl border px-3 py-2"},
+      React.createElement('div',{className:"flex items-center justify-between mb-1"},
+        React.createElement('span',{className:"text-[10px] font-bold text-gray-500 uppercase"},"Progression pondérée par durée"),
+        React.createElement('span',{className:"text-xs font-bold text-gray-700"},pctW+"% ("+doneDur.toFixed(1)+"j / "+totalDur.toFixed(1)+"j)")),
+      React.createElement('div',{className:"w-full bg-gray-200 rounded-full h-3 overflow-hidden"},
+        React.createElement('div',{className:"h-3 rounded-full bg-gradient-to-r from-green-400 to-green-600 transition-all duration-700",style:{width:pctW+"%"}}))),
+    // Detail popup
+    showDetail&&React.createElement('div',{className:"bg-white rounded-xl border px-3 py-2 space-y-1"},
+      React.createElement('div',{className:"flex items-center justify-between"},React.createElement('span',{className:"text-xs font-bold text-gray-600"},"Détail par feature terminée"),React.createElement('button',{onClick:()=>setShowDetail(false),className:"text-gray-400 hover:text-gray-600"},"✕")),
+      wb.length>0&&React.createElement('div',{className:"space-y-1"},wb.map(f=>{const p=dB(f.plannedStart,f.plannedEnd),a=dB(f.actualStart,f.actualEnd),diff=a-p;
+        return React.createElement('div',{key:f.id,className:"flex items-center gap-2 text-[11px]"},
+          React.createElement('span',{className:"font-medium text-gray-700 truncate flex-1",style:{maxWidth:180}},f.title),
+          React.createElement('span',{className:"text-gray-500"},p+"j→"+a+"j"),
+          React.createElement('span',{className:"font-bold "+(diff>0?"text-red-500":diff<0?"text-green-500":"text-gray-400")},diff>0?"+"+diff+"j":diff<0?diff+"j":"="));})),
+      wb.length===0&&React.createElement('p',{className:"text-xs text-gray-400"},"Aucune feature avec planned + actual complétés")));
+}
+
+/* ═══ MAIN ═══ */
+function App(){
+  const[fs,setFs]=useState(INIT);const[tab,setTab]=useState(isMob?"V1":"All");const[editing,setEditing]=useState(null);const[copied,setCopied]=useState(false);const[sq,setSq]=useState("");const[fSt,setFSt]=useState("Tous");const[fDi,setFDi]=useState("Toutes");const[dId,setDId]=useState(null);const[doV,setDoV]=useState(null);const[doI,setDoI]=useState(null);const[collapsed,setCollapsed]=useState({});const iRef=useRef(null);
+
+  const save=u=>{setFs(p=>p.map(f=>{if(f.id!==u.id)return f;const c=f.status!==u.status;return{...u,history:c?[...u.history,{status:u.status,date:new Date().toISOString()}]:u.history};}));};
+  const delF=id=>setFs(p=>p.filter(f=>f.id!==id));
+  const addF=v=>{const nId=Math.max(...fs.map(f=>f.id))+1;const nf=mk(nId,"Nouvelle feature",v,"🟢","1j",["cursor"],"","",fs.filter(f=>f.version===v).length);nf.group="📦 Autre";setFs(p=>[...p,nf]);setEditing(nId);};
+
+  const hDrop=useCallback((tv,di)=>{if(!dId)return;setFs(p=>{let n=[...p];const fi=n.findIndex(f=>f.id===dId);if(fi===-1)return p;const it={...n[fi],version:tv};n.splice(fi,1);const vi=sortF(n.filter(f=>f.version===tv));let at;if(di!==null&&di<vi.length)at=n.indexOf(vi[di]);else at=vi.length?n.indexOf(vi[vi.length-1])+1:n.length;n.splice(at,0,it);let o=0;return n.map(f=>f.version===tv?{...f,order:o++}:f);});setDId(null);setDoV(null);setDoI(null);},[dId]);
+  const tDrop=v=>{if(!dId)return;setFs(p=>p.map(f=>f.id===dId?{...f,version:v}:f));setDId(null);};
+
+  const expJ=()=>{navigator.clipboard.writeText(JSON.stringify(fs,null,2));setCopied(true);setTimeout(()=>setCopied(false),2000);};
+  const expM=()=>{let m="# Roadmap\n\n";VV.forEach(v=>{const its=sortF(fs.filter(f=>f.version===v));m+=`## ${v} — ${VL[v]} (${its.filter(f=>f.status==="✅ Terminé").length}/${its.length})\n\n`;its.forEach((f,i)=>{m+=`${i+1}. ${f.difficulty} **${f.title}** — ${f.duration} — ${f.status}\n`;});m+="\n";});navigator.clipboard.writeText(m);setCopied(true);setTimeout(()=>setCopied(false),2000);};
+  const impJ=e=>{const f=e.target.files?.[0];if(!f)return;const r=new FileReader();r.onload=ev=>{try{setFs(JSON.parse(ev.target.result));}catch{alert("JSON invalide");}};r.readAsText(f);e.target.value="";};
+
+  const filt=useMemo(()=>{let l=fs;if(tab!=="All"&&tab!=="Timeline")l=l.filter(f=>f.version===tab);if(sq){const q=sq.toLowerCase();l=l.filter(f=>f.title.toLowerCase().includes(q)||f.stack.some(s=>(TM[s]?.n||"").toLowerCase().includes(q)));}if(fSt!=="Tous")l=l.filter(f=>f.status===fSt);if(fDi!=="Toutes")l=l.filter(f=>f.difficulty===fDi);return l;},[fs,tab,sq,fSt,fDi]);
+
+  const toggleGrp=(v,g)=>setCollapsed(p=>({...p,[v+g]:!p[v+g]}));
+
+  const rCol=v=>{const its=sortF(filt.filter(f=>f.version===v));const al=fs.filter(f=>f.version===v);const dn=al.filter(f=>f.status==="✅ Terminé").length;const c=CC[v];const ov=doV===v;
+    // Group features
+    const groups={};its.forEach(f=>{const g=f.group||getGroup(f.id);if(!groups[g])groups[g]=[];groups[g].push(f);});
+
+    return React.createElement('div',{key:v,className:"flex flex-col",onDragOver:e=>{e.preventDefault();setDoV(v);},onDragLeave:e=>{if(!e.currentTarget.contains(e.relatedTarget)){setDoV(null);setDoI(null);}},onDrop:e=>{e.preventDefault();hDrop(v,doI);}},
+      React.createElement('div',{className:"rounded-t-xl px-4 py-2 text-white",style:{background:TC[v].h}},React.createElement('div',{className:"flex items-center justify-between"},React.createElement('div',{className:"flex items-center gap-2"},React.createElement('span',{className:"text-base font-bold"},v),React.createElement('span',{className:"text-xs opacity-75"},VL[v])),React.createElement('span',{className:"text-xs font-semibold bg-white/20 px-2 py-0.5 rounded-full"},dn+"/"+al.length)),React.createElement(PB,{d:dn,t:al.length})),
+      React.createElement('div',{className:"rounded-b-xl border border-t-0 p-2 space-y-1 flex-1 transition-colors "+(ov&&dId?c.dg+" border-dashed":"bg-white border-gray-200"),style:{minHeight:50}},
+        Object.entries(groups).map(([grp,items])=>{
+          const isC=collapsed[v+grp];
+          return React.createElement('div',{key:grp},
+            React.createElement('button',{onClick:()=>toggleGrp(v,grp),className:"w-full flex items-center gap-1 px-1 py-1 text-[11px] font-bold text-gray-500 hover:text-gray-700 transition-colors"},
+              React.createElement('span',{className:"transition-transform "+(isC?"":"rotate-90"),style:{display:"inline-block"}},isC?"▶":"▶"),grp,React.createElement('span',{className:"text-[9px] text-gray-400 font-normal ml-1"},items.length)),
+            !isC&&items.map((f,i)=>React.createElement(FC,{key:f.id,f,idx:i,c,onClick:()=>setEditing(f.id),onDS:id=>setDId(id),onDE:()=>{setDId(null);setDoV(null);setDoI(null);},doI,onDI:i=>setDoI(i)})));
+        }),
+        React.createElement('button',{onClick:()=>addF(v),className:"w-full flex items-center justify-center gap-1 py-2 text-xs text-gray-400 hover:text-blue-600 border-2 border-dashed border-gray-200 hover:border-blue-300 rounded-lg transition-colors mt-1"},"+  Ajouter une feature")));};
+
+  return React.createElement('div',{className:"min-h-screen bg-gray-100"},
+    React.createElement('div',{className:"bg-white border-b sticky top-0 z-40"},
+      React.createElement('div',{className:"max-w-screen-2xl mx-auto px-3 py-2 flex items-center justify-between flex-wrap gap-2"},
+        React.createElement('div',null,React.createElement('h1',{className:"text-lg font-extrabold text-gray-900"},"🗺️ Roadmap Produit"),React.createElement('p',{className:"text-[10px] text-gray-400 dk"},"SaaS Analytics Appels & Coaching Closeurs")),
+        React.createElement('div',{className:"flex items-center gap-1.5"},
+          React.createElement('input',{ref:iRef,type:"file",accept:".json",className:"hidden",onChange:impJ}),
+          React.createElement('button',{onClick:()=>iRef.current?.click(),className:"text-xs font-semibold text-gray-600 border border-gray-300 px-2 py-1.5 rounded-lg hover:bg-gray-50"},"📥"),
+          React.createElement('button',{onClick:expJ,className:"text-xs font-semibold text-gray-600 border border-gray-300 px-2 py-1.5 rounded-lg hover:bg-gray-50"},copied?"✅":"📋 JSON"),
+          React.createElement('button',{onClick:expM,className:"text-xs font-semibold text-gray-600 border border-gray-300 px-2 py-1.5 rounded-lg hover:bg-gray-50 dk"},"📄 MD"))),
+      React.createElement('div',{className:"max-w-screen-2xl mx-auto px-3 flex gap-1 pb-0 overflow-x-auto"},
+        ["All",...VV,"Timeline"].map(t=>{const a=tab===t;const cnt=t==="All"?fs.length:t==="Timeline"?null:fs.filter(f=>f.version===t).length;const isDT=dId&&VV.includes(t);
+          return React.createElement('button',{key:t,onClick:()=>setTab(t),onDragOver:e=>{if(VV.includes(t))e.preventDefault();},onDrop:()=>{if(VV.includes(t))tDrop(t);},
+            className:"px-4 py-2 text-sm font-bold rounded-t-lg border border-b-0 whitespace-nowrap flex-shrink-0 transition-all "+(a?"text-white -mb-px z-10":isDT?"text-gray-800 bg-yellow-100 border-yellow-300 tab-hl":"text-gray-500 bg-gray-50 border-transparent hover:bg-gray-100"),
+            style:a?{background:(TC[t]||TC.All).h}:{}},(t==="Timeline"?"📅 ":"")+t+(cnt!=null?" ("+cnt+")":""));}))),
+    React.createElement('div',{className:"max-w-screen-2xl mx-auto px-3 py-3"},
+      React.createElement(Stats,{fs:tab==="All"||tab==="Timeline"?fs:fs.filter(f=>f.version===tab),all:fs}),
+      tab!=="Timeline"&&React.createElement('div',{className:"flex items-center gap-2 mb-3 flex-wrap"},
+        React.createElement('div',{className:"relative flex-1 max-w-xs min-w-[140px]"},React.createElement('span',{className:"absolute left-2 top-1/2 -translate-y-1/2 text-sm"},"🔍"),React.createElement('input',{className:"w-full border rounded-lg pl-7 pr-3 py-1.5 text-sm",placeholder:"Rechercher...",value:sq,onChange:e=>setSq(e.target.value)})),
+        React.createElement('select',{className:"border rounded-lg px-2 py-1.5 text-xs",value:fSt,onChange:e=>setFSt(e.target.value)},React.createElement('option',null,"Tous"),STS.map(s=>React.createElement('option',{key:s},s))),
+        React.createElement('select',{className:"border rounded-lg px-2 py-1.5 text-xs",value:fDi,onChange:e=>setFDi(e.target.value)},React.createElement('option',{value:"Toutes"},"Toutes"),DF.map(d=>React.createElement('option',{key:d},d)))),
+      tab==="Timeline"?React.createElement(TLine,{features:fs,setFs,onEdit:id=>setEditing(id)}):
+      tab==="All"?React.createElement('div',{className:"grid grid-cols-1 lg:grid-cols-3 gap-4 mc"},VV.map(v=>rCol(v))):
+      React.createElement('div',{className:isMob?"":"max-w-2xl mx-auto"},rCol(tab))),
+    editing!==null&&React.createElement(EP,{feature:fs.find(f=>f.id===editing),onSave:save,onClose:()=>setEditing(null),onDelete:id=>{delF(id);setEditing(null);}}));
+}
+
+ReactDOM.render(React.createElement(App),document.getElementById("root"));
+</script>
+</body>
+</html>
