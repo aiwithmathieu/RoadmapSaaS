@@ -338,7 +338,9 @@ async function loadFromGitHub(){
     if(!r.ok)return null;
     const json=await r.json();
     if(!json.content)return null;
-    const decoded=atob(json.content.replace(/\n/g,""));
+    const b64=json.content.replace(/\n/g,"");
+    const bytes=Uint8Array.from(atob(b64),c=>c.charCodeAt(0));
+    const decoded=new TextDecoder("utf-8").decode(bytes);
     const data=JSON.parse(decoded);
     if(Array.isArray(data)&&data.length>0)return data;
   }catch(e){console.warn("⚠️ GitHub load failed:",e);}
