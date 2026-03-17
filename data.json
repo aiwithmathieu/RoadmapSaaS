@@ -875,7 +875,7 @@
   },
   {
     "id": 33,
-    "title": "Nouvelle feature",
+    "title": "Proposer analyse + approfondie avec opus (et + cher)",
     "version": "V2",
     "difficulty": "🟢",
     "duration": "1j",
@@ -897,6 +897,6 @@
     "order": 9,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📦 Autre"
+    "group": "💬 Feedback & Coaching"
   }
 ]
