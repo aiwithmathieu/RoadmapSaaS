@@ -319,14 +319,15 @@ function loadLocal(){try{const d=localStorage.getItem(LS_KEY);if(d){const p=JSON
 function saveLocal(fs){try{localStorage.setItem(LS_KEY,JSON.stringify(fs));}catch(e){}}
 
 // Debounced save to GitHub (waits 2s after last change to avoid spamming)
-function saveToGitHub(fs){
+function saveToGitHub(fs,onStatus){
   clearTimeout(saveTimeout);
   saveTimeout=setTimeout(async()=>{
     try{
+      onStatus&&onStatus("saving");
       const r=await fetch(API_SAVE_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(fs)});
-      if(r.ok)console.log("✅ Saved to GitHub");
-      else console.warn("⚠️ GitHub save failed:",await r.text());
-    }catch(e){console.warn("⚠️ GitHub save unavailable (local mode)");}
+      if(r.ok){console.log("✅ Saved to GitHub");onStatus&&onStatus("synced");}
+      else{console.warn("⚠️ GitHub save failed:",await r.text());onStatus&&onStatus("error");}
+    }catch(e){console.warn("⚠️ GitHub save unavailable (local mode)");onStatus&&onStatus("local");}
   },2000);
 }
 
@@ -348,7 +349,7 @@ function App(){
   },[]);
 
   // Auto-save to localStorage + GitHub on every state change
-  useEffect(()=>{if(!synced)return;saveLocal(fs);saveToGitHub(fs);},[fs,synced]);
+  useEffect(()=>{if(!synced)return;saveLocal(fs);saveToGitHub(fs,setSyncStatus);},[fs,synced]);
 
   const save=u=>{setFs(p=>p.map(f=>{if(f.id!==u.id)return f;const c=f.status!==u.status;return{...u,history:c?[...u.history,{status:u.status,date:new Date().toISOString()}]:u.history};}));};
   const delF=id=>setFs(p=>p.filter(f=>f.id!==id));
@@ -396,7 +397,7 @@ function App(){
           React.createElement('button',{onClick:expJ,className:"text-xs font-semibold text-gray-600 border border-gray-300 px-2 py-1.5 rounded-lg hover:bg-gray-50"},copied?"✅":"📋 JSON"),
           React.createElement('button',{onClick:expM,className:"text-xs font-semibold text-gray-600 border border-gray-300 px-2 py-1.5 rounded-lg hover:bg-gray-50 dk"},"📄 MD"),
           React.createElement('button',{onClick:()=>{if(confirm("Réinitialiser toutes les données à l'état initial ? Les modifications seront perdues.")){setFs(INIT);localStorage.removeItem(LS_KEY);}},className:"text-xs font-semibold text-red-500 border border-red-200 px-2 py-1.5 rounded-lg hover:bg-red-50 dk"},"🔄"),
-          React.createElement('span',{className:"text-[9px] px-1.5 py-1 rounded-full dk "+(syncStatus==="synced"?"bg-green-100 text-green-700":"bg-yellow-100 text-yellow-700")},syncStatus==="synced"?"☁️ Synced":"💾 Local"))),
+          React.createElement('span',{className:"text-[9px] px-1.5 py-1 rounded-full dk "+(syncStatus==="synced"?"bg-green-100 text-green-700":syncStatus==="saving"?"bg-blue-100 text-blue-700":syncStatus==="error"?"bg-red-100 text-red-700":"bg-yellow-100 text-yellow-700")},syncStatus==="synced"?"☁️ Synced":syncStatus==="saving"?"⏳ Saving...":syncStatus==="error"?"❌ Error":"💾 Local"))),
       React.createElement('div',{className:"max-w-screen-2xl mx-auto px-3 flex gap-1 pb-0 overflow-x-auto"},
         ["All",...VV,"Timeline"].map(t=>{const a=tab===t;const cnt=t==="All"?fs.length:t==="Timeline"?null:fs.filter(f=>f.version===t).length;const isDT=dId&&VV.includes(t);
           return React.createElement('button',{key:t,onClick:()=>setTab(t),onDragOver:e=>{if(VV.includes(t))e.preventDefault();},onDrop:()=>{if(VV.includes(t))tDrop(t);},
