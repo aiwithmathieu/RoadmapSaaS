@@ -3,9 +3,9 @@
     "id": 1,
     "title": "Auth multi-tenant (MakerKit)",
     "version": "V1",
-    "difficulty": "🟢",
+    "difficulty": "ð¢",
     "duration": "1-2j",
-    "status": "📋 À faire",
+    "status": "ð Ã faire",
     "note": "",
     "stack": [
       "supabase-auth",
@@ -14,7 +14,7 @@
     ],
     "history": [
       {
-        "status": "📋 À faire",
+        "status": "ð Ã faire",
         "date": "2026-03-17T05:44:32.251Z"
       }
     ],
@@ -25,15 +25,15 @@
     "order": 0,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "🔐 Auth & Sécurité"
+    "group": "ð Auth & SÃ©curitÃ©"
   },
   {
     "id": 2,
     "title": "Upload audio closeur",
     "version": "V1",
-    "difficulty": "🟢",
+    "difficulty": "ð¢",
     "duration": "1j",
-    "status": "📋 À faire",
+    "status": "ð Ã faire",
     "note": "",
     "stack": [
       "nextjs",
@@ -41,7 +41,7 @@
     ],
     "history": [
       {
-        "status": "📋 À faire",
+        "status": "ð Ã faire",
         "date": "2026-03-17T05:44:32.251Z"
       }
     ],
@@ -52,22 +52,22 @@
     "order": 1,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📞 Upload & Pipeline"
+    "group": "ð Upload & Pipeline"
   },
   {
     "id": 3,
     "title": "Case RGPD upload",
     "version": "V1",
-    "difficulty": "🟢",
+    "difficulty": "ð¢",
     "duration": "0.5j",
-    "status": "📋 À faire",
+    "status": "ð Ã faire",
     "note": "",
     "stack": [
       "cursor"
     ],
     "history": [
       {
-        "status": "📋 À faire",
+        "status": "ð Ã faire",
         "date": "2026-03-17T05:44:32.251Z"
       }
     ],
@@ -78,15 +78,15 @@
     "order": 2,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📞 Upload & Pipeline"
+    "group": "ð Upload & Pipeline"
   },
   {
     "id": 4,
     "title": "Statut call upload",
     "version": "V1",
-    "difficulty": "🟢",
+    "difficulty": "ð¢",
     "duration": "0.5j",
-    "status": "📋 À faire",
+    "status": "ð Ã faire",
     "note": "",
     "stack": [
       "cursor",
@@ -94,7 +94,7 @@
     ],
     "history": [
       {
-        "status": "📋 À faire",
+        "status": "ð Ã faire",
         "date": "2026-03-17T05:44:32.251Z"
       }
     ],
@@ -105,15 +105,15 @@
     "order": 3,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📞 Upload & Pipeline"
+    "group": "ð Upload & Pipeline"
   },
   {
     "id": 5,
     "title": "Transcription Soniox (FR)",
     "version": "V1",
-    "difficulty": "🟡",
+    "difficulty": "ð¡",
     "duration": "2-3j",
-    "status": "🔨 En cours",
+    "status": "ð¨ En cours",
     "note": "",
     "stack": [
       "soniox",
@@ -122,11 +122,11 @@
     ],
     "history": [
       {
-        "status": "📋 À faire",
+        "status": "ð Ã faire",
         "date": "2026-03-17T05:44:32.251Z"
       },
       {
-        "status": "🔨 En cours",
+        "status": "ð¨ En cours",
         "date": "2026-03-09T08:00:00.000Z"
       }
     ],
@@ -137,15 +137,15 @@
     "order": 4,
     "includeWeekendPlanned": true,
     "includeWeekendActual": true,
-    "group": "📞 Upload & Pipeline"
+    "group": "ð Upload & Pipeline"
   },
   {
     "id": 6,
-    "title": "Métriques déterministes",
+    "title": "MÃ©triques dÃ©terministes",
     "version": "V1",
-    "difficulty": "🟡",
+    "difficulty": "ð¡",
     "duration": "2j",
-    "status": "📋 À faire",
+    "status": "ð Ã faire",
     "note": "",
     "stack": [
       "trigger-dev",
@@ -153,7 +153,7 @@
     ],
     "history": [
       {
-        "status": "📋 À faire",
+        "status": "ð Ã faire",
         "date": "2026-03-17T05:44:32.251Z"
       }
     ],
@@ -164,15 +164,15 @@
     "order": 5,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "🧠 Analyse & Métriques"
+    "group": "ð§  Analyse & MÃ©triques"
   },
   {
     "id": 7,
     "title": "Analyse IA Claude",
     "version": "V1",
-    "difficulty": "🟡",
+    "difficulty": "ð¡",
     "duration": "2-3j",
-    "status": "📋 À faire",
+    "status": "ð Ã faire",
     "note": "",
     "stack": [
       "claude-api",
@@ -181,7 +181,7 @@
     ],
     "history": [
       {
-        "status": "📋 À faire",
+        "status": "ð Ã faire",
         "date": "2026-03-17T05:44:32.251Z"
       }
     ],
@@ -192,15 +192,15 @@
     "order": 6,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "🧠 Analyse & Métriques"
+    "group": "ð§  Analyse & MÃ©triques"
   },
   {
     "id": 8,
-    "title": "États async pipeline",
+    "title": "Ãtats async pipeline",
     "version": "V1",
-    "difficulty": "🟡",
+    "difficulty": "ð¡",
     "duration": "1-2j",
-    "status": "📋 À faire",
+    "status": "ð Ã faire",
     "note": "",
     "stack": [
       "cursor",
@@ -208,7 +208,7 @@
     ],
     "history": [
       {
-        "status": "📋 À faire",
+        "status": "ð Ã faire",
         "date": "2026-03-17T05:44:32.251Z"
       }
     ],
@@ -219,15 +219,15 @@
     "order": 7,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📊 Dashboards & UX"
+    "group": "ð Dashboards & UX"
   },
   {
     "id": 9,
     "title": "Rapport IA panel",
     "version": "V1",
-    "difficulty": "🟢",
+    "difficulty": "ð¢",
     "duration": "1-2j",
-    "status": "📋 À faire",
+    "status": "ð Ã faire",
     "note": "",
     "stack": [
       "cursor",
@@ -235,7 +235,7 @@
     ],
     "history": [
       {
-        "status": "📋 À faire",
+        "status": "ð Ã faire",
         "date": "2026-03-17T05:44:32.251Z"
       }
     ],
@@ -246,15 +246,15 @@
     "order": 8,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📊 Dashboards & UX"
+    "group": "ð Dashboards & UX"
   },
   {
     "id": 10,
     "title": "Dashboard admin KPIs",
     "version": "V1",
-    "difficulty": "🟡",
+    "difficulty": "ð¡",
     "duration": "2-3j",
-    "status": "📋 À faire",
+    "status": "ð Ã faire",
     "note": "",
     "stack": [
       "cursor",
@@ -263,7 +263,7 @@
     ],
     "history": [
       {
-        "status": "📋 À faire",
+        "status": "ð Ã faire",
         "date": "2026-03-17T05:44:32.251Z"
       }
     ],
@@ -274,15 +274,15 @@
     "order": 9,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📊 Dashboards & UX"
+    "group": "ð Dashboards & UX"
   },
   {
     "id": 11,
     "title": "Liste closeurs",
     "version": "V1",
-    "difficulty": "🟢",
+    "difficulty": "ð¢",
     "duration": "1j",
-    "status": "📋 À faire",
+    "status": "ð Ã faire",
     "note": "",
     "stack": [
       "cursor",
@@ -290,7 +290,7 @@
     ],
     "history": [
       {
-        "status": "📋 À faire",
+        "status": "ð Ã faire",
         "date": "2026-03-17T05:44:32.251Z"
       }
     ],
@@ -301,15 +301,15 @@
     "order": 10,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📊 Dashboards & UX"
+    "group": "ð Dashboards & UX"
   },
   {
     "id": 12,
-    "title": "Fiche détail closeur",
+    "title": "Fiche dÃ©tail closeur",
     "version": "V1",
-    "difficulty": "🟢",
+    "difficulty": "ð¢",
     "duration": "1j",
-    "status": "📋 À faire",
+    "status": "ð Ã faire",
     "note": "",
     "stack": [
       "cursor",
@@ -317,7 +317,7 @@
     ],
     "history": [
       {
-        "status": "📋 À faire",
+        "status": "ð Ã faire",
         "date": "2026-03-17T05:44:32.251Z"
       }
     ],
@@ -328,15 +328,15 @@
     "order": 11,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📊 Dashboards & UX"
+    "group": "ð Dashboards & UX"
   },
   {
     "id": 13,
     "title": "Dashboard closeur",
     "version": "V1",
-    "difficulty": "🟢",
+    "difficulty": "ð¢",
     "duration": "1j",
-    "status": "📋 À faire",
+    "status": "ð Ã faire",
     "note": "",
     "stack": [
       "cursor",
@@ -344,7 +344,7 @@
     ],
     "history": [
       {
-        "status": "📋 À faire",
+        "status": "ð Ã faire",
         "date": "2026-03-17T05:44:32.251Z"
       }
     ],
@@ -355,15 +355,15 @@
     "order": 12,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📊 Dashboards & UX"
+    "group": "ð Dashboards & UX"
   },
   {
     "id": 14,
-    "title": "Feedback coach → closeur",
+    "title": "Feedback coach â closeur",
     "version": "V1",
-    "difficulty": "🟢",
+    "difficulty": "ð¢",
     "duration": "2j",
-    "status": "📋 À faire",
+    "status": "ð Ã faire",
     "note": "",
     "stack": [
       "cursor",
@@ -372,7 +372,7 @@
     ],
     "history": [
       {
-        "status": "📋 À faire",
+        "status": "ð Ã faire",
         "date": "2026-03-17T05:44:32.251Z"
       }
     ],
@@ -383,15 +383,15 @@
     "order": 13,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "💬 Feedback & Coaching"
+    "group": "ð¬ Feedback & Coaching"
   },
   {
     "id": 15,
-    "title": "Abonnement MIPS ⚠️",
+    "title": "Abonnement MIPS â ï¸",
     "version": "V1",
-    "difficulty": "🟡",
+    "difficulty": "ð¡",
     "duration": "2-3j",
-    "status": "📋 À faire",
+    "status": "ð Ã faire",
     "note": "",
     "stack": [
       "mips",
@@ -399,7 +399,7 @@
     ],
     "history": [
       {
-        "status": "📋 À faire",
+        "status": "ð Ã faire",
         "date": "2026-03-17T05:44:32.251Z"
       }
     ],
@@ -410,15 +410,15 @@
     "order": 14,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "💳 Paiement"
+    "group": "ð³ Paiement"
   },
   {
     "id": 16,
     "title": "RLS Supabase tables",
     "version": "V1",
-    "difficulty": "🟢",
+    "difficulty": "ð¢",
     "duration": "1j",
-    "status": "📋 À faire",
+    "status": "ð Ã faire",
     "note": "",
     "stack": [
       "supabase-rls",
@@ -426,7 +426,7 @@
     ],
     "history": [
       {
-        "status": "📋 À faire",
+        "status": "ð Ã faire",
         "date": "2026-03-17T05:44:32.251Z"
       }
     ],
@@ -437,22 +437,22 @@
     "order": 15,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "🔐 Auth & Sécurité"
+    "group": "ð Auth & SÃ©curitÃ©"
   },
   {
     "id": 17,
     "title": "Stockage audio",
     "version": "V2",
-    "difficulty": "🟡",
+    "difficulty": "ð¡",
     "duration": "2j",
-    "status": "📋 À faire",
+    "status": "ð Ã faire",
     "note": "",
     "stack": [
       "supabase-storage"
     ],
     "history": [
       {
-        "status": "📋 À faire",
+        "status": "ð Ã faire",
         "date": "2026-03-17T05:44:32.251Z"
       }
     ],
@@ -463,15 +463,15 @@
     "order": 0,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📁 Stockage & Scripts"
+    "group": "ð Stockage & Scripts"
   },
   {
     "id": 18,
-    "title": "Bibliothèque scripts call",
+    "title": "BibliothÃ¨que scripts call",
     "version": "V2",
-    "difficulty": "🟡",
+    "difficulty": "ð¡",
     "duration": "2-3j",
-    "status": "📋 À faire",
+    "status": "ð Ã faire",
     "note": "",
     "stack": [
       "cursor",
@@ -479,7 +479,7 @@
     ],
     "history": [
       {
-        "status": "📋 À faire",
+        "status": "ð Ã faire",
         "date": "2026-03-17T05:44:32.251Z"
       }
     ],
@@ -490,15 +490,15 @@
     "order": 1,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📁 Stockage & Scripts"
+    "group": "ð Stockage & Scripts"
   },
   {
     "id": 19,
     "title": "Attribution leads admin",
     "version": "V2",
-    "difficulty": "🟡",
+    "difficulty": "ð¡",
     "duration": "3j",
-    "status": "📋 À faire",
+    "status": "ð Ã faire",
     "note": "",
     "stack": [
       "cursor",
@@ -506,7 +506,7 @@
     ],
     "history": [
       {
-        "status": "📋 À faire",
+        "status": "ð Ã faire",
         "date": "2026-03-17T05:44:32.251Z"
       }
     ],
@@ -517,15 +517,15 @@
     "order": 2,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "👥 Leads & Attribution"
+    "group": "ð¥ Leads & Attribution"
   },
   {
     "id": 20,
     "title": "Gestion commissions",
     "version": "V2",
-    "difficulty": "🟡",
+    "difficulty": "ð¡",
     "duration": "3-4j",
-    "status": "📋 À faire",
+    "status": "ð Ã faire",
     "note": "",
     "stack": [
       "supabase-db",
@@ -533,7 +533,7 @@
     ],
     "history": [
       {
-        "status": "📋 À faire",
+        "status": "ð Ã faire",
         "date": "2026-03-17T05:44:32.251Z"
       }
     ],
@@ -544,15 +544,15 @@
     "order": 3,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "💰 Commissions & Classement"
+    "group": "ð° Commissions & Classement"
   },
   {
     "id": 21,
-    "title": "Top 5 closeurs pondéré",
+    "title": "Top 5 closeurs pondÃ©rÃ©",
     "version": "V2",
-    "difficulty": "🟢",
+    "difficulty": "ð¢",
     "duration": "1-2j",
-    "status": "📋 À faire",
+    "status": "ð Ã faire",
     "note": "",
     "stack": [
       "supabase-db",
@@ -560,7 +560,7 @@
     ],
     "history": [
       {
-        "status": "📋 À faire",
+        "status": "ð Ã faire",
         "date": "2026-03-17T05:44:32.251Z"
       }
     ],
@@ -571,15 +571,15 @@
     "order": 4,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "💰 Commissions & Classement"
+    "group": "ð° Commissions & Classement"
   },
   {
     "id": 22,
-    "title": "Séquences relance emails",
+    "title": "SÃ©quences relance emails",
     "version": "V2",
-    "difficulty": "🟡",
+    "difficulty": "ð¡",
     "duration": "3-4j",
-    "status": "📋 À faire",
+    "status": "ð Ã faire",
     "note": "",
     "stack": [
       "cursor",
@@ -587,7 +587,7 @@
     ],
     "history": [
       {
-        "status": "📋 À faire",
+        "status": "ð Ã faire",
         "date": "2026-03-17T05:44:32.251Z"
       }
     ],
@@ -598,15 +598,15 @@
     "order": 5,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📧 Relances & Notifications"
+    "group": "ð§ Relances & Notifications"
   },
   {
     "id": 23,
     "title": "Import CSV leads",
     "version": "V2",
-    "difficulty": "🟡",
+    "difficulty": "ð¡",
     "duration": "3-4j",
-    "status": "📋 À faire",
+    "status": "ð Ã faire",
     "note": "",
     "stack": [
       "cursor",
@@ -614,7 +614,7 @@
     ],
     "history": [
       {
-        "status": "📋 À faire",
+        "status": "ð Ã faire",
         "date": "2026-03-17T05:44:32.251Z"
       }
     ],
@@ -625,15 +625,15 @@
     "order": 6,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "👥 Leads & Attribution"
+    "group": "ð¥ Leads & Attribution"
   },
   {
     "id": 24,
     "title": "Affiliation/referral",
     "version": "V2",
-    "difficulty": "🔴",
+    "difficulty": "ð´",
     "duration": "4-5j",
-    "status": "📋 À faire",
+    "status": "ð Ã faire",
     "note": "",
     "stack": [
       "supabase-db",
@@ -642,7 +642,7 @@
     ],
     "history": [
       {
-        "status": "📋 À faire",
+        "status": "ð Ã faire",
         "date": "2026-03-17T05:44:32.251Z"
       }
     ],
@@ -653,15 +653,15 @@
     "order": 7,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "🤝 Affiliation"
+    "group": "ð¤ Affiliation"
   },
   {
     "id": 25,
     "title": "Notifications in-app",
     "version": "V2",
-    "difficulty": "🟡",
+    "difficulty": "ð¡",
     "duration": "2-3j",
-    "status": "📋 À faire",
+    "status": "ð Ã faire",
     "note": "",
     "stack": [
       "supabase-db",
@@ -669,7 +669,7 @@
     ],
     "history": [
       {
-        "status": "📋 À faire",
+        "status": "ð Ã faire",
         "date": "2026-03-17T05:44:32.251Z"
       }
     ],
@@ -680,15 +680,15 @@
     "order": 8,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📧 Relances & Notifications"
+    "group": "ð§ Relances & Notifications"
   },
   {
     "id": 26,
     "title": "Simulateur IA appel",
     "version": "V3",
-    "difficulty": "🔴",
+    "difficulty": "ð´",
     "duration": "8-12j",
-    "status": "📋 À faire",
+    "status": "ð Ã faire",
     "note": "",
     "stack": [
       "claude-api",
@@ -697,7 +697,7 @@
     ],
     "history": [
       {
-        "status": "📋 À faire",
+        "status": "ð Ã faire",
         "date": "2026-03-17T05:44:32.251Z"
       }
     ],
@@ -708,15 +708,15 @@
     "order": 0,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "🤖 IA Avancée"
+    "group": "ð¤ IA AvancÃ©e"
   },
   {
     "id": 27,
     "title": "Scripts training simulateur",
     "version": "V3",
-    "difficulty": "🟡",
+    "difficulty": "ð¡",
     "duration": "2-3j",
-    "status": "📋 À faire",
+    "status": "ð Ã faire",
     "note": "",
     "stack": [
       "cursor",
@@ -724,7 +724,7 @@
     ],
     "history": [
       {
-        "status": "📋 À faire",
+        "status": "ð Ã faire",
         "date": "2026-03-17T05:44:32.251Z"
       }
     ],
@@ -735,15 +735,15 @@
     "order": 1,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "🤖 IA Avancée"
+    "group": "ð¤ IA AvancÃ©e"
   },
   {
     "id": 28,
     "title": "IA attribution leads",
     "version": "V3",
-    "difficulty": "🔴",
+    "difficulty": "ð´",
     "duration": "3-4j",
-    "status": "📋 À faire",
+    "status": "ð Ã faire",
     "note": "",
     "stack": [
       "claude-api",
@@ -751,7 +751,7 @@
     ],
     "history": [
       {
-        "status": "📋 À faire",
+        "status": "ð Ã faire",
         "date": "2026-03-17T05:44:32.251Z"
       }
     ],
@@ -762,15 +762,15 @@
     "order": 2,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "🤖 IA Avancée"
+    "group": "ð¤ IA AvancÃ©e"
   },
   {
     "id": 29,
     "title": "Automatisation relances",
     "version": "V3",
-    "difficulty": "🔴",
+    "difficulty": "ð´",
     "duration": "4-5j",
-    "status": "📋 À faire",
+    "status": "ð Ã faire",
     "note": "",
     "stack": [
       "trigger-dev",
@@ -779,7 +779,7 @@
     ],
     "history": [
       {
-        "status": "📋 À faire",
+        "status": "ð Ã faire",
         "date": "2026-03-17T05:44:32.251Z"
       }
     ],
@@ -790,15 +790,15 @@
     "order": 3,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "⚡ Automatisation"
+    "group": "â¡ Automatisation"
   },
   {
     "id": 30,
     "title": "Comparaison cohortes",
     "version": "V3",
-    "difficulty": "🟢",
+    "difficulty": "ð¢",
     "duration": "1-2j",
-    "status": "📋 À faire",
+    "status": "ð Ã faire",
     "note": "",
     "stack": [
       "supabase-db",
@@ -806,7 +806,7 @@
     ],
     "history": [
       {
-        "status": "📋 À faire",
+        "status": "ð Ã faire",
         "date": "2026-03-17T05:44:32.251Z"
       }
     ],
@@ -817,15 +817,15 @@
     "order": 4,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📈 Analytics & Intégrations"
+    "group": "ð Analytics & IntÃ©grations"
   },
   {
     "id": 31,
     "title": "Pipeline Kanban",
     "version": "V3",
-    "difficulty": "🟡",
+    "difficulty": "ð¡",
     "duration": "3-4j",
-    "status": "📋 À faire",
+    "status": "ð Ã faire",
     "note": "",
     "stack": [
       "cursor",
@@ -833,7 +833,7 @@
     ],
     "history": [
       {
-        "status": "📋 À faire",
+        "status": "ð Ã faire",
         "date": "2026-03-17T05:44:32.251Z"
       }
     ],
@@ -844,15 +844,15 @@
     "order": 5,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📈 Analytics & Intégrations"
+    "group": "ð Analytics & IntÃ©grations"
   },
   {
     "id": 32,
     "title": "API publique / webhooks",
     "version": "V3",
-    "difficulty": "🔴",
+    "difficulty": "ð´",
     "duration": "5-7j",
-    "status": "📋 À faire",
+    "status": "ð Ã faire",
     "note": "",
     "stack": [
       "nextjs",
@@ -860,7 +860,7 @@
     ],
     "history": [
       {
-        "status": "📋 À faire",
+        "status": "ð Ã faire",
         "date": "2026-03-17T05:44:32.251Z"
       }
     ],
@@ -871,6 +871,6 @@
     "order": 6,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📈 Analytics & Intégrations"
+    "group": "ð Analytics & IntÃ©grations"
   }
 ]
