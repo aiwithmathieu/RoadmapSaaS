@@ -163,8 +163,24 @@ function TP({sel,onChange}){const[op,setOp]=useState(false);const av=TT.filter(t
     React.createElement('div',{className:"flex flex-wrap gap-1.5 mb-2"},sel.map(tid=>{const t=TM[tid];if(!t)return null;return React.createElement('span',{key:tid,className:"inline-flex items-center gap-1 bg-gray-100 border border-gray-200 rounded-full pl-1 pr-1 py-0.5"},React.createElement(TL,{tid,sz:13}),React.createElement('span',{className:"text-xs text-gray-700"},t.n),React.createElement('button',{onClick:()=>onChange(sel.filter(s=>s!==tid)),className:"ml-0.5 text-gray-400 hover:text-red-500"},"×"));}),React.createElement('button',{onClick:()=>setOp(!op),className:"text-[11px] text-blue-600 border border-dashed border-blue-300 rounded-full px-2 py-0.5 hover:bg-blue-50"},"+Ajouter")),
     op&&React.createElement('div',{className:"border rounded-lg bg-white shadow-lg max-h-48 overflow-y-auto p-2 space-y-1"},Object.entries(gr).map(([cat,ts])=>React.createElement('div',{key:cat},React.createElement('p',{className:"text-[9px] font-bold text-gray-400 uppercase mb-0.5"},cat),React.createElement('div',{className:"flex flex-wrap gap-1"},ts.map(t=>React.createElement('button',{key:t.id,onClick:()=>{onChange([...sel,t.id]);setOp(false);},className:"inline-flex items-center gap-1 bg-gray-50 border rounded-full px-1.5 py-0.5 hover:bg-blue-50"},React.createElement(TL,{tid:t.id,sz:12}),React.createElement('span',{className:"text-[11px]"},t.n))))))));}
 
+/* ═══ GROUP PICKER ═══ */
+function GroupPicker({value,onChange,allFeatures}){
+  const[adding,setAdding]=useState(false);const[newG,setNewG]=useState("");
+  const groups=useMemo(()=>{const s=new Set();Object.keys(GROUPS).forEach(g=>s.add(g));allFeatures.forEach(f=>{if(f.group)s.add(f.group);});return[...s].sort();},[allFeatures]);
+  return React.createElement('div',null,
+    React.createElement('label',{className:"block text-xs font-bold text-gray-500 uppercase mb-1"},"Groupe"),
+    React.createElement('select',{className:"w-full border rounded-lg px-3 py-2 text-sm",value:value,onChange:e=>onChange(e.target.value)},
+      React.createElement('option',{value:""},"— Aucun —"),
+      groups.map(g=>React.createElement('option',{key:g,value:g},g))),
+    !adding&&React.createElement('button',{onClick:()=>setAdding(true),className:"mt-1 text-[11px] text-blue-600 hover:text-blue-800 font-semibold"},"+  Nouvelle catégorie"),
+    adding&&React.createElement('div',{className:"flex gap-1.5 mt-1.5"},
+      React.createElement('input',{className:"flex-1 border rounded-lg px-2 py-1.5 text-sm",placeholder:"Ex: 🎯 Onboarding",value:newG,onChange:e=>setNewG(e.target.value),autoFocus:true}),
+      React.createElement('button',{onClick:()=>{if(newG.trim()){onChange(newG.trim());setNewG("");setAdding(false);}},className:"text-xs font-semibold text-white bg-blue-600 px-3 py-1.5 rounded-lg hover:bg-blue-700"},"OK"),
+      React.createElement('button',{onClick:()=>{setNewG("");setAdding(false);},className:"text-xs text-gray-500 px-2"},"✕")));
+}
+
 /* ═══ EDIT PANEL ═══ */
-function EP({feature:f,onSave,onClose,onDelete}){
+function EP({feature:f,onSave,onClose,onDelete,allFeatures}){
   const[d,setD]=useState({...f,stack:[...f.stack]});const s=(k,v)=>setD(p=>({...p,[k]:v}));
   return React.createElement('div',{className:"fixed inset-0 z-50 flex "+(isMob?"":"justify-end"),onClick:onClose},
     React.createElement('div',{className:"absolute inset-0 bg-black/30 backdrop-blur-sm"}),
@@ -184,7 +200,7 @@ function EP({feature:f,onSave,onClose,onDelete}){
         React.createElement('div',{className:"flex flex-col gap-2"},
           React.createElement('label',{className:"flex items-center gap-2 cursor-pointer"},React.createElement('input',{type:"checkbox",checked:d.includeWeekendPlanned||false,onChange:e=>s("includeWeekendPlanned",e.target.checked),className:"w-4 h-4 rounded"}),React.createElement('span',{className:"text-xs font-semibold text-gray-600"},"Planned : inclure les week-ends")),
           React.createElement('label',{className:"flex items-center gap-2 cursor-pointer"},React.createElement('input',{type:"checkbox",checked:d.includeWeekendActual||false,onChange:e=>s("includeWeekendActual",e.target.checked),className:"w-4 h-4 rounded"}),React.createElement('span',{className:"text-xs font-semibold text-gray-600"},"Réel : inclure les week-ends"))),
-        React.createElement('div',null,React.createElement('label',{className:"block text-xs font-bold text-gray-500 uppercase mb-1"},"Groupe"),React.createElement('input',{className:"w-full border rounded-lg px-3 py-2 text-sm",value:d.group||"",onChange:e=>s("group",e.target.value)})),
+        React.createElement(GroupPicker,{value:d.group||"",onChange:v=>s("group",v),allFeatures:allFeatures}),
         React.createElement(TP,{sel:d.stack,onChange:v=>s("stack",v)}),
         React.createElement('div',null,React.createElement('label',{className:"block text-xs font-bold text-gray-500 uppercase mb-1"},"Note"),React.createElement('textarea',{className:"w-full border rounded-lg px-3 py-2 text-sm",value:d.note,onChange:e=>s("note",e.target.value),rows:2,placeholder:"Note..."})),
         React.createElement('div',null,React.createElement('label',{className:"block text-xs font-bold text-gray-500 uppercase mb-1"},"Historique"),React.createElement('div',{className:"bg-gray-50 rounded-lg p-2 max-h-24 overflow-y-auto space-y-1"},d.history.map((h,i)=>React.createElement('div',{key:i,className:"flex items-center gap-2 text-xs"},React.createElement('div',{className:"w-2 h-2 rounded-full",style:{background:SC[h.status]||"#9ca3af"}}),React.createElement('span',{className:"font-medium text-gray-700"},h.status),React.createElement('span',{className:"text-gray-400"},fD(h.date)))))),
@@ -294,12 +310,49 @@ function Stats({fs,all}){
 }
 
 /* ═══ MAIN ═══ */
+const LS_KEY="roadmap_saas_data";
+const GH_DATA_URL="https://raw.githubusercontent.com/aiwithmathieu/RoadmapSaaS/main/data.json";
+const API_SAVE_URL="/api/save";
+let saveTimeout=null;
+
+function loadLocal(){try{const d=localStorage.getItem(LS_KEY);if(d){const p=JSON.parse(d);if(Array.isArray(p)&&p.length>0)return p;}}catch(e){}return null;}
+function saveLocal(fs){try{localStorage.setItem(LS_KEY,JSON.stringify(fs));}catch(e){}}
+
+// Debounced save to GitHub (waits 2s after last change to avoid spamming)
+function saveToGitHub(fs){
+  clearTimeout(saveTimeout);
+  saveTimeout=setTimeout(async()=>{
+    try{
+      const r=await fetch(API_SAVE_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(fs)});
+      if(r.ok)console.log("✅ Saved to GitHub");
+      else console.warn("⚠️ GitHub save failed:",await r.text());
+    }catch(e){console.warn("⚠️ GitHub save unavailable (local mode)");}
+  },2000);
+}
+
 function App(){
-  const[fs,setFs]=useState(INIT);const[tab,setTab]=useState(isMob?"V1":"All");const[editing,setEditing]=useState(null);const[copied,setCopied]=useState(false);const[sq,setSq]=useState("");const[fSt,setFSt]=useState("Tous");const[fDi,setFDi]=useState("Toutes");const[dId,setDId]=useState(null);const[doV,setDoV]=useState(null);const[doI,setDoI]=useState(null);const[collapsed,setCollapsed]=useState({});const iRef=useRef(null);
+  const[fs,setFs]=useState(()=>loadLocal()||INIT);
+  const[synced,setSynced]=useState(false);
+  const[syncStatus,setSyncStatus]=useState("local");
+  const[tab,setTab]=useState(isMob?"V1":"All");const[editing,setEditing]=useState(null);const[copied,setCopied]=useState(false);const[sq,setSq]=useState("");const[fSt,setFSt]=useState("Tous");const[fDi,setFDi]=useState("Toutes");const[dId,setDId]=useState(null);const[doV,setDoV]=useState(null);const[doI,setDoI]=useState(null);const[collapsed,setCollapsed]=useState({});const iRef=useRef(null);
+
+  // On mount: try to load from GitHub, fallback to localStorage/INIT
+  useEffect(()=>{
+    (async()=>{
+      try{
+        const r=await fetch(GH_DATA_URL+"?t="+Date.now());
+        if(r.ok){const d=await r.json();if(Array.isArray(d)&&d.length>0){setFs(d);saveLocal(d);setSyncStatus("synced");setSynced(true);return;}}
+      }catch(e){}
+      setSyncStatus("local");setSynced(true);
+    })();
+  },[]);
+
+  // Auto-save to localStorage + GitHub on every state change
+  useEffect(()=>{if(!synced)return;saveLocal(fs);saveToGitHub(fs);},[fs,synced]);
 
   const save=u=>{setFs(p=>p.map(f=>{if(f.id!==u.id)return f;const c=f.status!==u.status;return{...u,history:c?[...u.history,{status:u.status,date:new Date().toISOString()}]:u.history};}));};
   const delF=id=>setFs(p=>p.filter(f=>f.id!==id));
-  const addF=v=>{const nId=Math.max(...fs.map(f=>f.id))+1;const nf=mk(nId,"Nouvelle feature",v,"🟢","1j",["cursor"],"","",fs.filter(f=>f.version===v).length);nf.group="📦 Autre";setFs(p=>[...p,nf]);setEditing(nId);};
+  const addF=(v,grp)=>{const nId=Math.max(...fs.map(f=>f.id))+1;const nf=mk(nId,"Nouvelle feature",v,"🟢","1j",["cursor"],"","",fs.filter(f=>f.version===v).length);nf.group=grp||"📦 Autre";setFs(p=>[...p,nf]);setEditing(nId);};
 
   const hDrop=useCallback((tv,di)=>{if(!dId)return;setFs(p=>{let n=[...p];const fi=n.findIndex(f=>f.id===dId);if(fi===-1)return p;const it={...n[fi],version:tv};n.splice(fi,1);const vi=sortF(n.filter(f=>f.version===tv));let at;if(di!==null&&di<vi.length)at=n.indexOf(vi[di]);else at=vi.length?n.indexOf(vi[vi.length-1])+1:n.length;n.splice(at,0,it);let o=0;return n.map(f=>f.version===tv?{...f,order:o++}:f);});setDId(null);setDoV(null);setDoI(null);},[dId]);
   const tDrop=v=>{if(!dId)return;setFs(p=>p.map(f=>f.id===dId?{...f,version:v}:f));setDId(null);};
@@ -321,9 +374,14 @@ function App(){
       React.createElement('div',{className:"rounded-b-xl border border-t-0 p-2 space-y-1 flex-1 transition-colors "+(ov&&dId?c.dg+" border-dashed":"bg-white border-gray-200"),style:{minHeight:50}},
         Object.entries(groups).map(([grp,items])=>{
           const isC=collapsed[v+grp];
-          return React.createElement('div',{key:grp},
-            React.createElement('button',{onClick:()=>toggleGrp(v,grp),className:"w-full flex items-center gap-1 px-1 py-1 text-[11px] font-bold text-gray-500 hover:text-gray-700 transition-colors"},
-              React.createElement('span',{className:"transition-transform "+(isC?"":"rotate-90"),style:{display:"inline-block"}},isC?"▶":"▶"),grp,React.createElement('span',{className:"text-[9px] text-gray-400 font-normal ml-1"},items.length)),
+          return React.createElement('div',{key:grp,
+            onDragOver:e=>{e.preventDefault();e.stopPropagation();},
+            onDrop:e=>{e.preventDefault();e.stopPropagation();try{const data=JSON.parse(e.dataTransfer.getData("application/json"));if(data.id){setFs(p=>p.map(f=>f.id===data.id?{...f,version:v,group:grp}:f));setDId(null);}}catch(x){}}},
+            React.createElement('div',{className:"flex items-center gap-1 px-1 py-1"},
+              React.createElement('button',{onClick:()=>toggleGrp(v,grp),className:"flex items-center gap-1 text-[11px] font-bold text-gray-500 hover:text-gray-700 flex-1"},
+                React.createElement('span',{className:"transition-transform "+(isC?"":"rotate-90"),style:{display:"inline-block"}},isC?"▶":"▶"),grp,React.createElement('span',{className:"text-[9px] text-gray-400 font-normal ml-1"},items.length)),
+              React.createElement('button',{onClick:e=>{e.stopPropagation();addF(v,grp);},className:"text-[10px] text-gray-400 hover:text-blue-600 px-1",title:"Ajouter dans "+grp},"+")
+            ),
             !isC&&items.map((f,i)=>React.createElement(FC,{key:f.id,f,idx:i,c,onClick:()=>setEditing(f.id),onDS:id=>setDId(id),onDE:()=>{setDId(null);setDoV(null);setDoI(null);},doI,onDI:i=>setDoI(i)})));
         }),
         React.createElement('button',{onClick:()=>addF(v),className:"w-full flex items-center justify-center gap-1 py-2 text-xs text-gray-400 hover:text-blue-600 border-2 border-dashed border-gray-200 hover:border-blue-300 rounded-lg transition-colors mt-1"},"+  Ajouter une feature")));};
@@ -336,7 +394,9 @@ function App(){
           React.createElement('input',{ref:iRef,type:"file",accept:".json",className:"hidden",onChange:impJ}),
           React.createElement('button',{onClick:()=>iRef.current?.click(),className:"text-xs font-semibold text-gray-600 border border-gray-300 px-2 py-1.5 rounded-lg hover:bg-gray-50"},"📥"),
           React.createElement('button',{onClick:expJ,className:"text-xs font-semibold text-gray-600 border border-gray-300 px-2 py-1.5 rounded-lg hover:bg-gray-50"},copied?"✅":"📋 JSON"),
-          React.createElement('button',{onClick:expM,className:"text-xs font-semibold text-gray-600 border border-gray-300 px-2 py-1.5 rounded-lg hover:bg-gray-50 dk"},"📄 MD"))),
+          React.createElement('button',{onClick:expM,className:"text-xs font-semibold text-gray-600 border border-gray-300 px-2 py-1.5 rounded-lg hover:bg-gray-50 dk"},"📄 MD"),
+          React.createElement('button',{onClick:()=>{if(confirm("Réinitialiser toutes les données à l'état initial ? Les modifications seront perdues.")){setFs(INIT);localStorage.removeItem(LS_KEY);}},className:"text-xs font-semibold text-red-500 border border-red-200 px-2 py-1.5 rounded-lg hover:bg-red-50 dk"},"🔄"),
+          React.createElement('span',{className:"text-[9px] px-1.5 py-1 rounded-full dk "+(syncStatus==="synced"?"bg-green-100 text-green-700":"bg-yellow-100 text-yellow-700")},syncStatus==="synced"?"☁️ Synced":"💾 Local"))),
       React.createElement('div',{className:"max-w-screen-2xl mx-auto px-3 flex gap-1 pb-0 overflow-x-auto"},
         ["All",...VV,"Timeline"].map(t=>{const a=tab===t;const cnt=t==="All"?fs.length:t==="Timeline"?null:fs.filter(f=>f.version===t).length;const isDT=dId&&VV.includes(t);
           return React.createElement('button',{key:t,onClick:()=>setTab(t),onDragOver:e=>{if(VV.includes(t))e.preventDefault();},onDrop:()=>{if(VV.includes(t))tDrop(t);},
@@ -351,7 +411,7 @@ function App(){
       tab==="Timeline"?React.createElement(TLine,{features:fs,setFs,onEdit:id=>setEditing(id)}):
       tab==="All"?React.createElement('div',{className:"grid grid-cols-1 lg:grid-cols-3 gap-4 mc"},VV.map(v=>rCol(v))):
       React.createElement('div',{className:isMob?"":"max-w-2xl mx-auto"},rCol(tab))),
-    editing!==null&&React.createElement(EP,{feature:fs.find(f=>f.id===editing),onSave:save,onClose:()=>setEditing(null),onDelete:id=>{delF(id);setEditing(null);}}));
+    editing!==null&&React.createElement(EP,{feature:fs.find(f=>f.id===editing),onSave:save,onClose:()=>setEditing(null),onDelete:id=>{delF(id);setEditing(null);},allFeatures:fs}));
 }
 
 ReactDOM.render(React.createElement(App),document.getElementById("root"));
