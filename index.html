@@ -311,7 +311,7 @@ function Stats({fs,all}){
 
 /* ═══ MAIN ═══ */
 const LS_KEY="roadmap_saas_data";
-const GH_DATA_URL="https://raw.githubusercontent.com/aiwithmathieu/RoadmapSaaS/main/data.json";
+const GH_API_URL="https://api.github.com/repos/aiwithmathieu/RoadmapSaaS/contents/data.json?ref=main";
 const API_SAVE_URL="/api/save";
 let saveTimeout=null;
 
@@ -331,20 +331,33 @@ function saveToGitHub(fs,onStatus){
   },2000);
 }
 
+// Load from GitHub API (no CDN cache, always fresh)
+async function loadFromGitHub(){
+  try{
+    const r=await fetch(GH_API_URL,{headers:{"Accept":"application/vnd.github.v3+json"},cache:"no-store"});
+    if(!r.ok)return null;
+    const json=await r.json();
+    if(!json.content)return null;
+    const decoded=atob(json.content.replace(/\n/g,""));
+    const data=JSON.parse(decoded);
+    if(Array.isArray(data)&&data.length>0)return data;
+  }catch(e){console.warn("⚠️ GitHub load failed:",e);}
+  return null;
+}
+
 function App(){
   const[fs,setFs]=useState(()=>loadLocal()||INIT);
   const[synced,setSynced]=useState(false);
-  const[syncStatus,setSyncStatus]=useState("local");
+  const[syncStatus,setSyncStatus]=useState("loading");
   const[tab,setTab]=useState(isMob?"V1":"All");const[editing,setEditing]=useState(null);const[copied,setCopied]=useState(false);const[sq,setSq]=useState("");const[fSt,setFSt]=useState("Tous");const[fDi,setFDi]=useState("Toutes");const[dId,setDId]=useState(null);const[doV,setDoV]=useState(null);const[doI,setDoI]=useState(null);const[collapsed,setCollapsed]=useState({});const iRef=useRef(null);
 
-  // On mount: try to load from GitHub, fallback to localStorage/INIT
+  // On mount: load from GitHub API (always fresh, no cache)
   useEffect(()=>{
     (async()=>{
-      try{
-        const r=await fetch(GH_DATA_URL+"?t="+Date.now());
-        if(r.ok){const d=await r.json();if(Array.isArray(d)&&d.length>0){setFs(d);saveLocal(d);setSyncStatus("synced");setSynced(true);return;}}
-      }catch(e){}
-      setSyncStatus("local");setSynced(true);
+      const data=await loadFromGitHub();
+      if(data){setFs(data);saveLocal(data);setSyncStatus("synced");console.log("✅ Loaded from GitHub ("+data.length+" features)");}
+      else{setSyncStatus("local");console.log("💾 Using local data");}
+      setSynced(true);
     })();
   },[]);
 
@@ -397,7 +410,7 @@ function App(){
           React.createElement('button',{onClick:expJ,className:"text-xs font-semibold text-gray-600 border border-gray-300 px-2 py-1.5 rounded-lg hover:bg-gray-50"},copied?"✅":"📋 JSON"),
           React.createElement('button',{onClick:expM,className:"text-xs font-semibold text-gray-600 border border-gray-300 px-2 py-1.5 rounded-lg hover:bg-gray-50 dk"},"📄 MD"),
           React.createElement('button',{onClick:()=>{if(confirm("Réinitialiser toutes les données à l'état initial ? Les modifications seront perdues.")){setFs(INIT);localStorage.removeItem(LS_KEY);}},className:"text-xs font-semibold text-red-500 border border-red-200 px-2 py-1.5 rounded-lg hover:bg-red-50 dk"},"🔄"),
-          React.createElement('span',{className:"text-[9px] px-1.5 py-1 rounded-full dk "+(syncStatus==="synced"?"bg-green-100 text-green-700":syncStatus==="saving"?"bg-blue-100 text-blue-700":syncStatus==="error"?"bg-red-100 text-red-700":"bg-yellow-100 text-yellow-700")},syncStatus==="synced"?"☁️ Synced":syncStatus==="saving"?"⏳ Saving...":syncStatus==="error"?"❌ Error":"💾 Local"))),
+          React.createElement('span',{className:"text-[9px] px-1.5 py-1 rounded-full dk "+(syncStatus==="synced"?"bg-green-100 text-green-700":syncStatus==="saving"?"bg-blue-100 text-blue-700":syncStatus==="loading"?"bg-gray-100 text-gray-500":syncStatus==="error"?"bg-red-100 text-red-700":"bg-yellow-100 text-yellow-700")},syncStatus==="synced"?"☁️ Synced":syncStatus==="saving"?"⏳ Saving...":syncStatus==="loading"?"⏳ Loading...":syncStatus==="error"?"❌ Error":"💾 Local"))),
       React.createElement('div',{className:"max-w-screen-2xl mx-auto px-3 flex gap-1 pb-0 overflow-x-auto"},
         ["All",...VV,"Timeline"].map(t=>{const a=tab===t;const cnt=t==="All"?fs.length:t==="Timeline"?null:fs.filter(f=>f.version===t).length;const isDT=dId&&VV.includes(t);
           return React.createElement('button',{key:t,onClick:()=>setTab(t),onDragOver:e=>{if(VV.includes(t))e.preventDefault();},onDrop:()=>{if(VV.includes(t))tDrop(t);},
