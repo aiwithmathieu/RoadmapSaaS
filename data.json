@@ -901,23 +901,25 @@
   },
   {
     "id": 34,
-    "title": "Nouvelle feature",
+    "title": "Nom de domaine",
     "version": "V1",
     "difficulty": "🟢",
-    "duration": "1j",
-    "status": "📋 À faire",
+    "duration": "2j",
+    "status": "🔨 En cours",
     "note": "",
-    "stack": [
-      "cursor"
-    ],
+    "stack": [],
     "history": [
       {
         "status": "📋 À faire",
         "date": "2026-03-17T10:07:14.281Z"
+      },
+      {
+        "status": "🔨 En cours",
+        "date": "2026-03-18T05:44:54.506Z"
       }
     ],
-    "plannedStart": "",
-    "plannedEnd": "",
+    "plannedStart": "2026-03-17",
+    "plannedEnd": "2026-03-19",
     "actualStart": "",
     "actualEnd": "",
     "order": 16,
