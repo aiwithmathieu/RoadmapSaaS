@@ -981,7 +981,7 @@
   },
   {
     "id": 37,
-    "title": "Nouvelle feature",
+    "title": "Passer sur Opus au lieu de sonnet ? Qualité > prix",
     "version": "V1",
     "difficulty": "🟢",
     "duration": "1j",
@@ -1003,6 +1003,6 @@
     "order": 18,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📦 Autre"
+    "group": "📈 Analytics & Intégrations"
   }
 ]
