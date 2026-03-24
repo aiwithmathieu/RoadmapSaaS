@@ -602,7 +602,7 @@
   },
   {
     "id": 23,
-    "title": "Import CSV leads",
+    "title": "Import CSV leads existants",
     "version": "V2",
     "difficulty": "🟡",
     "duration": "3-4j",
