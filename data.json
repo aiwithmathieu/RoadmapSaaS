@@ -1033,9 +1033,9 @@
   },
   {
     "id": 39,
-    "title": "Nouvelle feature",
+    "title": "Création automatique de leads en fonction tunnel de vente",
     "version": "V2",
-    "difficulty": "🟢",
+    "difficulty": "🟡",
     "duration": "1j",
     "status": "📋 À faire",
     "note": "",
