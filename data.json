@@ -981,10 +981,10 @@
   },
   {
     "id": 37,
-    "title": "Création role setter",
+    "title": "Nouvelle feature",
     "version": "V2",
     "difficulty": "🟢",
-    "duration": "1.5j",
+    "duration": "1j",
     "status": "📋 À faire",
     "note": "",
     "stack": [
@@ -1003,6 +1003,6 @@
     "order": 11,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "👥 Leads & Attribution"
+    "group": "📦 Autre"
   }
 ]
