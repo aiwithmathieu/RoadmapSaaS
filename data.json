@@ -1059,7 +1059,7 @@
   },
   {
     "id": 40,
-    "title": "Nouvelle feature",
+    "title": "ajuster consommation crédit après transcription pour paiement précis. Faire estimation à l'upload + déduction post analyse ",
     "version": "V2",
     "difficulty": "🟢",
     "duration": "1j",
@@ -1081,6 +1081,6 @@
     "order": 14,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📦 Autre"
+    "group": "💳 Paiement"
   }
 ]
