@@ -1212,5 +1212,31 @@
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
     "group": "📦 Autre"
+  },
+  {
+    "id": 46,
+    "title": "Ajouter un graphique de progression à partir des rings",
+    "version": "V1",
+    "difficulty": "🟢",
+    "duration": "1j",
+    "status": "📋 À faire",
+    "note": "",
+    "stack": [
+      "cursor"
+    ],
+    "history": [
+      {
+        "status": "📋 À faire",
+        "date": "2026-04-01T11:46:38.538Z"
+      }
+    ],
+    "plannedStart": "",
+    "plannedEnd": "",
+    "actualStart": "",
+    "actualEnd": "",
+    "order": 23,
+    "includeWeekendPlanned": false,
+    "includeWeekendActual": false,
+    "group": "📦 Autre"
   }
 ]
