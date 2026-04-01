@@ -1111,7 +1111,7 @@
   },
   {
     "id": 42,
-    "title": "Faire une bibliothèque avec des calls type pour avoir une base",
+    "title": "Nouvelle feature",
     "version": "V1",
     "difficulty": "🟢",
     "duration": "1j",
@@ -1131,32 +1131,6 @@
     "actualStart": "",
     "actualEnd": "",
     "order": 19,
-    "includeWeekendPlanned": false,
-    "includeWeekendActual": false,
-    "group": "📦 Autre"
-  },
-  {
-    "id": 43,
-    "title": "Ajouter une analyse sur la durée de l’appel type que doit représenter un Appel",
-    "version": "V1",
-    "difficulty": "🟢",
-    "duration": "1j",
-    "status": "📋 À faire",
-    "note": "",
-    "stack": [
-      "cursor"
-    ],
-    "history": [
-      {
-        "status": "📋 À faire",
-        "date": "2026-04-01T11:46:38.538Z"
-      }
-    ],
-    "plannedStart": "",
-    "plannedEnd": "",
-    "actualStart": "",
-    "actualEnd": "",
-    "order": 20,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
     "group": "📦 Autre"
