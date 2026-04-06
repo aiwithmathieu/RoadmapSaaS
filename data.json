@@ -1243,32 +1243,6 @@
   },
   {
     "id": 46,
-    "title": "Optimiser vitesse site ",
-    "version": "V1",
-    "difficulty": "🟢",
-    "duration": "0.5j",
-    "status": "📋 À faire",
-    "note": "",
-    "stack": [
-      "cursor"
-    ],
-    "history": [
-      {
-        "status": "📋 À faire",
-        "date": "2026-04-06T18:02:11.978Z"
-      }
-    ],
-    "plannedStart": "",
-    "plannedEnd": "",
-    "actualStart": "",
-    "actualEnd": "",
-    "order": 23,
-    "includeWeekendPlanned": false,
-    "includeWeekendActual": false,
-    "group": "📦 Autre"
-  },
-  {
-    "id": 47,
     "title": "Nouvelle feature",
     "version": "V1",
     "difficulty": "🟢",
@@ -1288,7 +1262,7 @@
     "plannedEnd": "",
     "actualStart": "",
     "actualEnd": "",
-    "order": 24,
+    "order": 23,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
     "group": "📦 Autre"
