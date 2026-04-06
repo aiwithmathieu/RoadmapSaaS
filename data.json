@@ -33,7 +33,7 @@
     "version": "V1",
     "difficulty": "🟢",
     "duration": "1j",
-    "status": "📋 À faire",
+    "status": "✅ Terminé",
     "note": "Léo t gay ",
     "stack": [
       "nextjs",
@@ -43,6 +43,10 @@
       {
         "status": "📋 À faire",
         "date": "2026-03-17T09:44:06.636Z"
+      },
+      {
+        "status": "✅ Terminé",
+        "date": "2026-04-06T18:02:58.999Z"
       }
     ],
     "plannedStart": "2026-03-18",
