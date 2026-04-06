@@ -86,7 +86,7 @@
     "version": "V1",
     "difficulty": "🟢",
     "duration": "0.5j",
-    "status": "📋 À faire",
+    "status": "✅ Terminé",
     "note": "",
     "stack": [
       "cursor",
@@ -96,6 +96,10 @@
       {
         "status": "📋 À faire",
         "date": "2026-03-17T09:44:06.636Z"
+      },
+      {
+        "status": "✅ Terminé",
+        "date": "2026-04-06T18:02:51.178Z"
       }
     ],
     "plannedStart": "2026-03-20",
