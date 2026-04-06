@@ -33,7 +33,7 @@
     "version": "V1",
     "difficulty": "🟢",
     "duration": "1j",
-    "status": "✅ Terminé",
+    "status": "📋 À faire",
     "note": "Léo t gay ",
     "stack": [
       "nextjs",
@@ -43,10 +43,6 @@
       {
         "status": "📋 À faire",
         "date": "2026-03-17T09:44:06.636Z"
-      },
-      {
-        "status": "✅ Terminé",
-        "date": "2026-04-06T18:02:58.999Z"
       }
     ],
     "plannedStart": "2026-03-18",
@@ -125,7 +121,7 @@
     "version": "V1",
     "difficulty": "🟡",
     "duration": "2-3j",
-    "status": "✅ Terminé",
+    "status": "🔨 En cours",
     "note": "",
     "stack": [
       "soniox",
@@ -140,10 +136,6 @@
       {
         "status": "🔨 En cours",
         "date": "2026-03-09T08:00:00.000Z"
-      },
-      {
-        "status": "✅ Terminé",
-        "date": "2026-04-06T18:03:03.965Z"
       }
     ],
     "plannedStart": "2026-03-09",
@@ -921,7 +913,7 @@
     "version": "V1",
     "difficulty": "🟢",
     "duration": "2j",
-    "status": "✅ Terminé",
+    "status": "🔨 En cours",
     "note": "",
     "stack": [],
     "history": [
@@ -932,10 +924,6 @@
       {
         "status": "🔨 En cours",
         "date": "2026-03-18T05:44:54.506Z"
-      },
-      {
-        "status": "✅ Terminé",
-        "date": "2026-04-06T18:03:10.625Z"
       }
     ],
     "plannedStart": "2026-03-17",
