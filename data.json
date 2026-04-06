@@ -188,7 +188,7 @@
     "version": "V1",
     "difficulty": "🟡",
     "duration": "2-3j",
-    "status": "📋 À faire",
+    "status": "✅ Terminé",
     "note": "",
     "stack": [
       "claude-api",
@@ -199,6 +199,10 @@
       {
         "status": "📋 À faire",
         "date": "2026-03-17T09:44:06.636Z"
+      },
+      {
+        "status": "✅ Terminé",
+        "date": "2026-04-06T18:06:47.847Z"
       }
     ],
     "plannedStart": "2026-03-25",
@@ -216,7 +220,7 @@
     "version": "V1",
     "difficulty": "🟡",
     "duration": "1-2j",
-    "status": "📋 À faire",
+    "status": "✅ Terminé",
     "note": "",
     "stack": [
       "cursor",
@@ -226,6 +230,10 @@
       {
         "status": "📋 À faire",
         "date": "2026-03-17T09:44:06.636Z"
+      },
+      {
+        "status": "✅ Terminé",
+        "date": "2026-04-06T18:06:38.884Z"
       }
     ],
     "plannedStart": "2026-03-30",
