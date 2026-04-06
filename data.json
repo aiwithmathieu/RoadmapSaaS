@@ -15,7 +15,7 @@
     "history": [
       {
         "status": "📋 À faire",
-        "date": "2026-04-06T18:05:18.587Z"
+        "date": "2026-03-17T09:44:06.636Z"
       }
     ],
     "plannedStart": "2026-03-16",
@@ -33,8 +33,8 @@
     "version": "V1",
     "difficulty": "🟢",
     "duration": "1j",
-    "status": "📋 À faire",
-    "note": "",
+    "status": "✅ Terminé",
+    "note": "Léo t gay ",
     "stack": [
       "nextjs",
       "supabase-db"
@@ -42,7 +42,11 @@
     "history": [
       {
         "status": "📋 À faire",
-        "date": "2026-04-06T18:05:18.587Z"
+        "date": "2026-03-17T09:44:06.636Z"
+      },
+      {
+        "status": "✅ Terminé",
+        "date": "2026-04-06T18:02:58.999Z"
       }
     ],
     "plannedStart": "2026-03-18",
@@ -60,7 +64,7 @@
     "version": "V1",
     "difficulty": "🟢",
     "duration": "0.5j",
-    "status": "📋 À faire",
+    "status": "✅ Terminé",
     "note": "",
     "stack": [
       "cursor"
@@ -68,7 +72,11 @@
     "history": [
       {
         "status": "📋 À faire",
-        "date": "2026-04-06T18:05:18.587Z"
+        "date": "2026-03-17T09:44:06.636Z"
+      },
+      {
+        "status": "✅ Terminé",
+        "date": "2026-04-06T18:02:54.601Z"
       }
     ],
     "plannedStart": "2026-03-19",
@@ -86,7 +94,7 @@
     "version": "V1",
     "difficulty": "🟢",
     "duration": "0.5j",
-    "status": "📋 À faire",
+    "status": "✅ Terminé",
     "note": "",
     "stack": [
       "cursor",
@@ -95,7 +103,11 @@
     "history": [
       {
         "status": "📋 À faire",
-        "date": "2026-04-06T18:05:18.587Z"
+        "date": "2026-03-17T09:44:06.636Z"
+      },
+      {
+        "status": "✅ Terminé",
+        "date": "2026-04-06T18:02:51.178Z"
       }
     ],
     "plannedStart": "2026-03-20",
@@ -113,7 +125,7 @@
     "version": "V1",
     "difficulty": "🟡",
     "duration": "2-3j",
-    "status": "🔨 En cours",
+    "status": "✅ Terminé",
     "note": "",
     "stack": [
       "soniox",
@@ -123,11 +135,15 @@
     "history": [
       {
         "status": "📋 À faire",
-        "date": "2026-04-06T18:05:18.587Z"
+        "date": "2026-03-17T09:44:06.636Z"
       },
       {
         "status": "🔨 En cours",
         "date": "2026-03-09T08:00:00.000Z"
+      },
+      {
+        "status": "✅ Terminé",
+        "date": "2026-04-06T18:03:03.965Z"
       }
     ],
     "plannedStart": "2026-03-09",
@@ -154,7 +170,7 @@
     "history": [
       {
         "status": "📋 À faire",
-        "date": "2026-04-06T18:05:18.587Z"
+        "date": "2026-03-17T09:44:06.636Z"
       }
     ],
     "plannedStart": "2026-03-23",
@@ -182,7 +198,7 @@
     "history": [
       {
         "status": "📋 À faire",
-        "date": "2026-04-06T18:05:18.587Z"
+        "date": "2026-03-17T09:44:06.636Z"
       }
     ],
     "plannedStart": "2026-03-25",
@@ -209,7 +225,7 @@
     "history": [
       {
         "status": "📋 À faire",
-        "date": "2026-04-06T18:05:18.587Z"
+        "date": "2026-03-17T09:44:06.636Z"
       }
     ],
     "plannedStart": "2026-03-30",
@@ -236,7 +252,7 @@
     "history": [
       {
         "status": "📋 À faire",
-        "date": "2026-04-06T18:05:18.587Z"
+        "date": "2026-03-17T09:44:06.636Z"
       }
     ],
     "plannedStart": "2026-04-01",
@@ -264,7 +280,7 @@
     "history": [
       {
         "status": "📋 À faire",
-        "date": "2026-04-06T18:05:18.587Z"
+        "date": "2026-03-17T09:44:06.636Z"
       }
     ],
     "plannedStart": "2026-04-03",
@@ -291,7 +307,7 @@
     "history": [
       {
         "status": "📋 À faire",
-        "date": "2026-04-06T18:05:18.587Z"
+        "date": "2026-03-17T09:44:06.636Z"
       }
     ],
     "plannedStart": "2026-04-08",
@@ -318,7 +334,7 @@
     "history": [
       {
         "status": "📋 À faire",
-        "date": "2026-04-06T18:05:18.587Z"
+        "date": "2026-03-17T09:44:06.636Z"
       }
     ],
     "plannedStart": "2026-04-09",
@@ -345,7 +361,7 @@
     "history": [
       {
         "status": "📋 À faire",
-        "date": "2026-04-06T18:05:18.587Z"
+        "date": "2026-03-17T09:44:06.636Z"
       }
     ],
     "plannedStart": "2026-04-10",
@@ -373,7 +389,7 @@
     "history": [
       {
         "status": "📋 À faire",
-        "date": "2026-04-06T18:05:18.587Z"
+        "date": "2026-03-17T09:44:06.636Z"
       }
     ],
     "plannedStart": "2026-04-13",
@@ -400,7 +416,7 @@
     "history": [
       {
         "status": "📋 À faire",
-        "date": "2026-04-06T18:05:18.587Z"
+        "date": "2026-03-17T09:44:06.636Z"
       }
     ],
     "plannedStart": "2026-04-15",
@@ -418,7 +434,7 @@
     "version": "V1",
     "difficulty": "🟢",
     "duration": "1j",
-    "status": "📋 À faire",
+    "status": "✅ Terminé",
     "note": "",
     "stack": [
       "supabase-rls",
@@ -427,7 +443,11 @@
     "history": [
       {
         "status": "📋 À faire",
-        "date": "2026-04-06T18:05:18.587Z"
+        "date": "2026-03-17T09:44:06.636Z"
+      },
+      {
+        "status": "✅ Terminé",
+        "date": "2026-04-06T18:03:26.581Z"
       }
     ],
     "plannedStart": "2026-04-20",
@@ -453,7 +473,7 @@
     "history": [
       {
         "status": "📋 À faire",
-        "date": "2026-04-06T18:05:18.587Z"
+        "date": "2026-03-17T09:44:06.636Z"
       }
     ],
     "plannedStart": "",
@@ -480,7 +500,7 @@
     "history": [
       {
         "status": "📋 À faire",
-        "date": "2026-04-06T18:05:18.587Z"
+        "date": "2026-03-17T09:44:06.636Z"
       }
     ],
     "plannedStart": "",
@@ -497,7 +517,7 @@
     "title": "Attribution leads admin",
     "version": "V2",
     "difficulty": "🟡",
-    "duration": "3j",
+    "duration": "3.5j",
     "status": "📋 À faire",
     "note": "",
     "stack": [
@@ -507,7 +527,7 @@
     "history": [
       {
         "status": "📋 À faire",
-        "date": "2026-04-06T18:05:18.587Z"
+        "date": "2026-03-17T09:44:06.636Z"
       }
     ],
     "plannedStart": "",
@@ -534,7 +554,7 @@
     "history": [
       {
         "status": "📋 À faire",
-        "date": "2026-04-06T18:05:18.587Z"
+        "date": "2026-03-17T09:44:06.636Z"
       }
     ],
     "plannedStart": "",
@@ -561,7 +581,7 @@
     "history": [
       {
         "status": "📋 À faire",
-        "date": "2026-04-06T18:05:18.587Z"
+        "date": "2026-03-17T09:44:06.636Z"
       }
     ],
     "plannedStart": "",
@@ -588,7 +608,7 @@
     "history": [
       {
         "status": "📋 À faire",
-        "date": "2026-04-06T18:05:18.587Z"
+        "date": "2026-03-17T09:44:06.636Z"
       }
     ],
     "plannedStart": "",
@@ -602,7 +622,7 @@
   },
   {
     "id": 23,
-    "title": "Import CSV leads",
+    "title": "Import CSV leads existants",
     "version": "V2",
     "difficulty": "🟡",
     "duration": "3-4j",
@@ -615,7 +635,7 @@
     "history": [
       {
         "status": "📋 À faire",
-        "date": "2026-04-06T18:05:18.587Z"
+        "date": "2026-03-17T09:44:06.636Z"
       }
     ],
     "plannedStart": "",
@@ -643,7 +663,7 @@
     "history": [
       {
         "status": "📋 À faire",
-        "date": "2026-04-06T18:05:18.587Z"
+        "date": "2026-03-17T09:44:06.636Z"
       }
     ],
     "plannedStart": "",
@@ -670,7 +690,7 @@
     "history": [
       {
         "status": "📋 À faire",
-        "date": "2026-04-06T18:05:18.587Z"
+        "date": "2026-03-17T09:44:06.636Z"
       }
     ],
     "plannedStart": "",
@@ -689,7 +709,7 @@
     "difficulty": "🔴",
     "duration": "8-12j",
     "status": "📋 À faire",
-    "note": "",
+    "note": "On your pense ? ",
     "stack": [
       "claude-api",
       "cursor",
@@ -698,7 +718,7 @@
     "history": [
       {
         "status": "📋 À faire",
-        "date": "2026-04-06T18:05:18.587Z"
+        "date": "2026-03-17T09:44:06.636Z"
       }
     ],
     "plannedStart": "",
@@ -725,7 +745,7 @@
     "history": [
       {
         "status": "📋 À faire",
-        "date": "2026-04-06T18:05:18.587Z"
+        "date": "2026-03-17T09:44:06.636Z"
       }
     ],
     "plannedStart": "",
@@ -752,7 +772,7 @@
     "history": [
       {
         "status": "📋 À faire",
-        "date": "2026-04-06T18:05:18.587Z"
+        "date": "2026-03-17T09:44:06.636Z"
       }
     ],
     "plannedStart": "",
@@ -780,7 +800,7 @@
     "history": [
       {
         "status": "📋 À faire",
-        "date": "2026-04-06T18:05:18.587Z"
+        "date": "2026-03-17T09:44:06.636Z"
       }
     ],
     "plannedStart": "",
@@ -807,7 +827,7 @@
     "history": [
       {
         "status": "📋 À faire",
-        "date": "2026-04-06T18:05:18.587Z"
+        "date": "2026-03-17T09:44:06.636Z"
       }
     ],
     "plannedStart": "",
@@ -834,7 +854,7 @@
     "history": [
       {
         "status": "📋 À faire",
-        "date": "2026-04-06T18:05:18.587Z"
+        "date": "2026-03-17T09:44:06.636Z"
       }
     ],
     "plannedStart": "",
@@ -861,7 +881,7 @@
     "history": [
       {
         "status": "📋 À faire",
-        "date": "2026-04-06T18:05:18.587Z"
+        "date": "2026-03-17T09:44:06.636Z"
       }
     ],
     "plannedStart": "",
@@ -872,5 +892,405 @@
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
     "group": "📈 Analytics & Intégrations"
+  },
+  {
+    "id": 33,
+    "title": "Proposer analyse + approfondie avec opus (et + cher)",
+    "version": "V2",
+    "difficulty": "🟢",
+    "duration": "1j",
+    "status": "📋 À faire",
+    "note": "",
+    "stack": [
+      "cursor"
+    ],
+    "history": [
+      {
+        "status": "📋 À faire",
+        "date": "2026-03-17T10:07:14.281Z"
+      }
+    ],
+    "plannedStart": "",
+    "plannedEnd": "",
+    "actualStart": "",
+    "actualEnd": "",
+    "order": 9,
+    "includeWeekendPlanned": false,
+    "includeWeekendActual": false,
+    "group": "💬 Feedback & Coaching"
+  },
+  {
+    "id": 34,
+    "title": "Nom de domaine",
+    "version": "V1",
+    "difficulty": "🟢",
+    "duration": "2j",
+    "status": "✅ Terminé",
+    "note": "",
+    "stack": [],
+    "history": [
+      {
+        "status": "📋 À faire",
+        "date": "2026-03-17T10:07:14.281Z"
+      },
+      {
+        "status": "🔨 En cours",
+        "date": "2026-03-18T05:44:54.506Z"
+      },
+      {
+        "status": "✅ Terminé",
+        "date": "2026-04-06T18:03:10.625Z"
+      }
+    ],
+    "plannedStart": "2026-03-17",
+    "plannedEnd": "2026-03-19",
+    "actualStart": "",
+    "actualEnd": "",
+    "order": 16,
+    "includeWeekendPlanned": false,
+    "includeWeekendActual": false,
+    "group": "📦 Autre"
+  },
+  {
+    "id": 35,
+    "title": "Anonymisation PII (regex CB)",
+    "version": "V1",
+    "difficulty": "🟢",
+    "duration": "0.5j",
+    "status": "📋 À faire",
+    "note": "",
+    "stack": [
+      "cursor"
+    ],
+    "history": [
+      {
+        "status": "📋 À faire",
+        "date": "2026-03-19T05:51:39.223Z"
+      }
+    ],
+    "plannedStart": "",
+    "plannedEnd": "",
+    "actualStart": "",
+    "actualEnd": "",
+    "order": 17,
+    "includeWeekendPlanned": false,
+    "includeWeekendActual": false,
+    "group": "🔐 Auth & Sécurité"
+  },
+  {
+    "id": 36,
+    "title": "Pouvoir migrer info closeuse seule --> chez infopreneur",
+    "version": "V2",
+    "difficulty": "🟢",
+    "duration": "1j",
+    "status": "📋 À faire",
+    "note": "",
+    "stack": [
+      "cursor"
+    ],
+    "history": [
+      {
+        "status": "📋 À faire",
+        "date": "2026-03-19T05:51:39.223Z"
+      }
+    ],
+    "plannedStart": "",
+    "plannedEnd": "",
+    "actualStart": "",
+    "actualEnd": "",
+    "order": 10,
+    "includeWeekendPlanned": false,
+    "includeWeekendActual": false,
+    "group": "🤝 Affiliation"
+  },
+  {
+    "id": 37,
+    "title": "Création role setter",
+    "version": "V2",
+    "difficulty": "🟢",
+    "duration": "1.5j",
+    "status": "📋 À faire",
+    "note": "",
+    "stack": [
+      "cursor"
+    ],
+    "history": [
+      {
+        "status": "📋 À faire",
+        "date": "2026-03-20T07:45:06.823Z"
+      }
+    ],
+    "plannedStart": "",
+    "plannedEnd": "",
+    "actualStart": "",
+    "actualEnd": "",
+    "order": 11,
+    "includeWeekendPlanned": false,
+    "includeWeekendActual": false,
+    "group": "👥 Leads & Attribution"
+  },
+  {
+    "id": 38,
+    "title": "Nouvelle feature",
+    "version": "V2",
+    "difficulty": "🟢",
+    "duration": "1j",
+    "status": "📋 À faire",
+    "note": "",
+    "stack": [
+      "cursor"
+    ],
+    "history": [
+      {
+        "status": "📋 À faire",
+        "date": "2026-03-20T07:45:06.823Z"
+      }
+    ],
+    "plannedStart": "",
+    "plannedEnd": "",
+    "actualStart": "",
+    "actualEnd": "",
+    "order": 12,
+    "includeWeekendPlanned": false,
+    "includeWeekendActual": false,
+    "group": "📦 Autre"
+  },
+  {
+    "id": 39,
+    "title": "Création automatique de leads en fonction tunnel de vente",
+    "version": "V2",
+    "difficulty": "🟡",
+    "duration": "1j",
+    "status": "📋 À faire",
+    "note": "",
+    "stack": [
+      "cursor"
+    ],
+    "history": [
+      {
+        "status": "📋 À faire",
+        "date": "2026-03-20T07:45:06.823Z"
+      }
+    ],
+    "plannedStart": "",
+    "plannedEnd": "",
+    "actualStart": "",
+    "actualEnd": "",
+    "order": 13,
+    "includeWeekendPlanned": false,
+    "includeWeekendActual": false,
+    "group": "📦 Autre"
+  },
+  {
+    "id": 40,
+    "title": "ajuster consommation crédit après transcription pour paiement précis. Faire estimation à l'upload + déduction post analyse ",
+    "version": "V2",
+    "difficulty": "🟢",
+    "duration": "1j",
+    "status": "📋 À faire",
+    "note": "",
+    "stack": [
+      "cursor"
+    ],
+    "history": [
+      {
+        "status": "📋 À faire",
+        "date": "2026-03-20T07:45:06.823Z"
+      }
+    ],
+    "plannedStart": "",
+    "plannedEnd": "",
+    "actualStart": "",
+    "actualEnd": "",
+    "order": 14,
+    "includeWeekendPlanned": false,
+    "includeWeekendActual": false,
+    "group": "💳 Paiement"
+  },
+  {
+    "id": 41,
+    "title": "Proposer analyse avec Opus 2x plus chère (voir si analyse + performante ?)",
+    "version": "V1",
+    "difficulty": "🟢",
+    "duration": "1j",
+    "status": "📋 À faire",
+    "note": "",
+    "stack": [
+      "cursor"
+    ],
+    "history": [
+      {
+        "status": "📋 À faire",
+        "date": "2026-03-26T13:33:11.154Z"
+      }
+    ],
+    "plannedStart": "",
+    "plannedEnd": "",
+    "actualStart": "",
+    "actualEnd": "",
+    "order": 15,
+    "includeWeekendPlanned": false,
+    "includeWeekendActual": false,
+    "group": "📦 Autre"
+  },
+  {
+    "id": 42,
+    "title": "Faire une bibliothèque avec des calls type pour avoir une base",
+    "version": "V1",
+    "difficulty": "🟢",
+    "duration": "1j",
+    "status": "📋 À faire",
+    "note": "",
+    "stack": [
+      "cursor"
+    ],
+    "history": [
+      {
+        "status": "📋 À faire",
+        "date": "2026-04-01T11:46:38.538Z"
+      }
+    ],
+    "plannedStart": "",
+    "plannedEnd": "",
+    "actualStart": "",
+    "actualEnd": "",
+    "order": 19,
+    "includeWeekendPlanned": false,
+    "includeWeekendActual": false,
+    "group": "📦 Autre"
+  },
+  {
+    "id": 43,
+    "title": "Ajouter une analyse sur la durée de l’appel type que doit représenter un Appel",
+    "version": "V1",
+    "difficulty": "🟢",
+    "duration": "1j",
+    "status": "📋 À faire",
+    "note": "",
+    "stack": [
+      "cursor"
+    ],
+    "history": [
+      {
+        "status": "📋 À faire",
+        "date": "2026-04-01T11:46:38.538Z"
+      }
+    ],
+    "plannedStart": "",
+    "plannedEnd": "",
+    "actualStart": "",
+    "actualEnd": "",
+    "order": 20,
+    "includeWeekendPlanned": false,
+    "includeWeekendActual": false,
+    "group": "📦 Autre"
+  },
+  {
+    "id": 44,
+    "title": "Mettre des rings pour l’évaluation du scoring",
+    "version": "V1",
+    "difficulty": "🟢",
+    "duration": "1j",
+    "status": "✅ Terminé",
+    "note": "",
+    "stack": [
+      "cursor"
+    ],
+    "history": [
+      {
+        "status": "📋 À faire",
+        "date": "2026-04-01T11:46:38.538Z"
+      },
+      {
+        "status": "✅ Terminé",
+        "date": "2026-04-06T18:02:44.007Z"
+      }
+    ],
+    "plannedStart": "",
+    "plannedEnd": "",
+    "actualStart": "",
+    "actualEnd": "",
+    "order": 21,
+    "includeWeekendPlanned": false,
+    "includeWeekendActual": false,
+    "group": "📦 Autre"
+  },
+  {
+    "id": 45,
+    "title": "Monitor le temps passer par client sur le Saas pour faire un argument marketing",
+    "version": "V1",
+    "difficulty": "🟢",
+    "duration": "1j",
+    "status": "📋 À faire",
+    "note": "",
+    "stack": [
+      "cursor"
+    ],
+    "history": [
+      {
+        "status": "📋 À faire",
+        "date": "2026-04-01T11:46:38.538Z"
+      }
+    ],
+    "plannedStart": "",
+    "plannedEnd": "",
+    "actualStart": "",
+    "actualEnd": "",
+    "order": 22,
+    "includeWeekendPlanned": false,
+    "includeWeekendActual": false,
+    "group": "📦 Autre"
+  },
+  {
+    "id": 46,
+    "title": "Optimiser vitesse site ",
+    "version": "V1",
+    "difficulty": "🟢",
+    "duration": "0.5j",
+    "status": "📋 À faire",
+    "note": "",
+    "stack": [
+      "cursor"
+    ],
+    "history": [
+      {
+        "status": "📋 À faire",
+        "date": "2026-04-06T18:02:11.978Z"
+      }
+    ],
+    "plannedStart": "",
+    "plannedEnd": "",
+    "actualStart": "",
+    "actualEnd": "",
+    "order": 23,
+    "includeWeekendPlanned": false,
+    "includeWeekendActual": false,
+    "group": "📦 Autre"
+  },
+  {
+    "id": 47,
+    "title": "Nouvelle feature",
+    "version": "V1",
+    "difficulty": "🟢",
+    "duration": "1j",
+    "status": "📋 À faire",
+    "note": "",
+    "stack": [
+      "cursor"
+    ],
+    "history": [
+      {
+        "status": "📋 À faire",
+        "date": "2026-04-06T18:02:11.978Z"
+      }
+    ],
+    "plannedStart": "",
+    "plannedEnd": "",
+    "actualStart": "",
+    "actualEnd": "",
+    "order": 24,
+    "includeWeekendPlanned": false,
+    "includeWeekendActual": false,
+    "group": "📦 Autre"
   }
 ]
