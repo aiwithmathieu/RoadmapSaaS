@@ -1330,31 +1330,5 @@
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
     "group": "📦 Autre"
-  },
-  {
-    "id": 49,
-    "title": "Nouvelle featurje suis pas lae",
-    "version": "V1",
-    "difficulty": "🟢",
-    "duration": "1j",
-    "status": "📋 À faire",
-    "note": "",
-    "stack": [
-      "cursor"
-    ],
-    "history": [
-      {
-        "status": "📋 À faire",
-        "date": "2026-04-07T13:29:57.165Z"
-      }
-    ],
-    "plannedStart": "",
-    "plannedEnd": "",
-    "actualStart": "",
-    "actualEnd": "",
-    "order": 26,
-    "includeWeekendPlanned": false,
-    "includeWeekendActual": false,
-    "group": "📦 Autre"
   }
 ]
