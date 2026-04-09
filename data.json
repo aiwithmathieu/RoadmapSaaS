@@ -1385,8 +1385,8 @@
   },
   {
     "id": 51,
-    "title": "Nouvelle feature",
-    "version": "V1",
+    "title": "Negocier tarifs transcription + claude sonnet pour business",
+    "version": "V2",
     "difficulty": "🟢",
     "duration": "1j",
     "status": "📋 À faire",
@@ -1407,6 +1407,6 @@
     "order": 28,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📦 Autre"
+    "group": "💳 Paiement"
   }
 ]
