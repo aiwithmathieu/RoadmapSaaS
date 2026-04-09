@@ -1382,5 +1382,31 @@
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
     "group": "📦 Autre"
+  },
+  {
+    "id": 51,
+    "title": "Nouvelle feature",
+    "version": "V1",
+    "difficulty": "🟢",
+    "duration": "1j",
+    "status": "📋 À faire",
+    "note": "",
+    "stack": [
+      "cursor"
+    ],
+    "history": [
+      {
+        "status": "📋 À faire",
+        "date": "2026-04-09T14:25:08.089Z"
+      }
+    ],
+    "plannedStart": "",
+    "plannedEnd": "",
+    "actualStart": "",
+    "actualEnd": "",
+    "order": 28,
+    "includeWeekendPlanned": false,
+    "includeWeekendActual": false,
+    "group": "📦 Autre"
   }
 ]
