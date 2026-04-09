@@ -1333,7 +1333,7 @@
   },
   {
     "id": 49,
-    "title": "Nouvelle feature",
+    "title": "Est ce moins onéreux de produire un .md par l'IA plutot qu'un .json ?? ",
     "version": "V1",
     "difficulty": "🟢",
     "duration": "1j",
@@ -1355,6 +1355,6 @@
     "order": 26,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📦 Autre"
+    "group": "🧠 Analyse & Métriques"
   }
 ]
