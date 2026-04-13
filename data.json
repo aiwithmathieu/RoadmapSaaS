@@ -1411,7 +1411,7 @@
   },
   {
     "id": 52,
-    "title": "Nouvelle feature",
+    "title": "ajouter visuel de comment on évalue",
     "version": "V2",
     "difficulty": "🟢",
     "duration": "1j",
@@ -1433,6 +1433,6 @@
     "order": 16,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📦 Autre"
+    "group": "📈 Analytics & Intégrations"
   }
 ]
