@@ -1408,5 +1408,31 @@
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
     "group": "💳 Paiement"
+  },
+  {
+    "id": 52,
+    "title": "Nouvelle feature",
+    "version": "V2",
+    "difficulty": "🟢",
+    "duration": "1j",
+    "status": "📋 À faire",
+    "note": "",
+    "stack": [
+      "cursor"
+    ],
+    "history": [
+      {
+        "status": "📋 À faire",
+        "date": "2026-04-13T10:39:20.033Z"
+      }
+    ],
+    "plannedStart": "",
+    "plannedEnd": "",
+    "actualStart": "",
+    "actualEnd": "",
+    "order": 16,
+    "includeWeekendPlanned": false,
+    "includeWeekendActual": false,
+    "group": "📦 Autre"
   }
 ]
