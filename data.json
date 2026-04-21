@@ -1515,14 +1515,15 @@
   },
   {
     "id": 56,
-    "title": "Nouvelle feature",
+    "title": "Activer upload sourcemaps Sentry au build Vercel",
     "version": "V1",
     "difficulty": "🟢",
-    "duration": "1j",
+    "duration": "0.5j",
     "status": "📋 À faire",
     "note": "",
     "stack": [
-      "cursor"
+      "cursor",
+      "sentry"
     ],
     "history": [
       {
@@ -1537,6 +1538,6 @@
     "order": 31,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📦 Autre"
+    "group": "📈 Analytics & Intégrations"
   }
 ]
