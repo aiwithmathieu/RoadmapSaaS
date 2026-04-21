@@ -1436,32 +1436,6 @@
     "group": "📈 Analytics & Intégrations"
   },
   {
-    "id": 54,
-    "title": "Nouvelle feature",
-    "version": "V1",
-    "difficulty": "🟢",
-    "duration": "1j",
-    "status": "📋 À faire",
-    "note": "",
-    "stack": [
-      "cursor"
-    ],
-    "history": [
-      {
-        "status": "📋 À faire",
-        "date": "2026-04-21T06:28:34.931Z"
-      }
-    ],
-    "plannedStart": "",
-    "plannedEnd": "",
-    "actualStart": "",
-    "actualEnd": "",
-    "order": 29,
-    "includeWeekendPlanned": false,
-    "includeWeekendActual": false,
-    "group": "📦 Autre"
-  },
-  {
     "id": 55,
     "title": "COnfirgurer resend comme SNMTP custom supabase AUTH",
     "version": "V1",
