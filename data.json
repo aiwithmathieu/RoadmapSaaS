@@ -1750,7 +1750,7 @@
   },
   {
     "id": 67,
-    "title": "Nouvelle feature",
+    "title": "Passer toutes les routes en zod au lieu de manuel",
     "version": "V2",
     "difficulty": "🟢",
     "duration": "1j",
@@ -1772,6 +1772,6 @@
     "order": 21,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📦 Autre"
+    "group": "📊 Dashboards & UX"
   }
 ]
