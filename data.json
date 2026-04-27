@@ -1698,7 +1698,7 @@
   },
   {
     "id": 65,
-    "title": "Nouvelle feature",
+    "title": "tag formation par call + filtres dashboard, calls et cout utilisation",
     "version": "V1",
     "difficulty": "🟢",
     "duration": "1j",
@@ -1718,6 +1718,32 @@
     "actualStart": "",
     "actualEnd": "",
     "order": 35,
+    "includeWeekendPlanned": false,
+    "includeWeekendActual": false,
+    "group": "🧠 Analyse & Métriques"
+  },
+  {
+    "id": 66,
+    "title": "Nouvelle feature",
+    "version": "V2",
+    "difficulty": "🟢",
+    "duration": "1j",
+    "status": "📋 À faire",
+    "note": "",
+    "stack": [
+      "cursor"
+    ],
+    "history": [
+      {
+        "status": "📋 À faire",
+        "date": "2026-04-21T06:38:28.183Z"
+      }
+    ],
+    "plannedStart": "",
+    "plannedEnd": "",
+    "actualStart": "",
+    "actualEnd": "",
+    "order": 20,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
     "group": "📦 Autre"
