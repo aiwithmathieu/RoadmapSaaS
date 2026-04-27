@@ -1724,10 +1724,10 @@
   },
   {
     "id": 66,
-    "title": "Nouvelle feature",
+    "title": "Pool de crédits partagé inter-orgs (persona free-lance)",
     "version": "V2",
-    "difficulty": "🟢",
-    "duration": "1j",
+    "difficulty": "🔴",
+    "duration": "4j",
     "status": "📋 À faire",
     "note": "",
     "stack": [
@@ -1746,6 +1746,6 @@
     "order": 20,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📦 Autre"
+    "group": "💳 Paiement"
   }
 ]
