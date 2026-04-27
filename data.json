@@ -1489,32 +1489,6 @@
     "group": "📈 Analytics & Intégrations"
   },
   {
-    "id": 57,
-    "title": "Nouvelle feature",
-    "version": "V1",
-    "difficulty": "🟢",
-    "duration": "1j",
-    "status": "📋 À faire",
-    "note": "",
-    "stack": [
-      "cursor"
-    ],
-    "history": [
-      {
-        "status": "📋 À faire",
-        "date": "2026-04-21T06:38:28.183Z"
-      }
-    ],
-    "plannedStart": "",
-    "plannedEnd": "",
-    "actualStart": "",
-    "actualEnd": "",
-    "order": 32,
-    "includeWeekendPlanned": false,
-    "includeWeekendActual": false,
-    "group": "📦 Autre"
-  },
-  {
     "id": 58,
     "title": "Configurer secrets GitHub Actions (Supabase + Trigger + Anthropic) pour CI/CD complet",
     "version": "V1",
@@ -1614,32 +1588,6 @@
     "actualStart": "",
     "actualEnd": "",
     "order": 19,
-    "includeWeekendPlanned": false,
-    "includeWeekendActual": false,
-    "group": "📦 Autre"
-  },
-  {
-    "id": 62,
-    "title": "Nouvelle feature",
-    "version": "V1",
-    "difficulty": "🟢",
-    "duration": "1j",
-    "status": "📋 À faire",
-    "note": "",
-    "stack": [
-      "cursor"
-    ],
-    "history": [
-      {
-        "status": "📋 À faire",
-        "date": "2026-04-21T06:38:28.183Z"
-      }
-    ],
-    "plannedStart": "",
-    "plannedEnd": "",
-    "actualStart": "",
-    "actualEnd": "",
-    "order": 32,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
     "group": "📦 Autre"
