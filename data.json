@@ -1773,5 +1773,31 @@
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
     "group": "📊 Dashboards & UX"
+  },
+  {
+    "id": 70,
+    "title": "Nouvelle feature",
+    "version": "V2",
+    "difficulty": "🟢",
+    "duration": "1j",
+    "status": "📋 À faire",
+    "note": "",
+    "stack": [
+      "cursor"
+    ],
+    "history": [
+      {
+        "status": "📋 À faire",
+        "date": "2026-04-21T06:38:28.183Z"
+      }
+    ],
+    "plannedStart": "",
+    "plannedEnd": "",
+    "actualStart": "",
+    "actualEnd": "",
+    "order": 23,
+    "includeWeekendPlanned": false,
+    "includeWeekendActual": false,
+    "group": "📦 Autre"
   }
 ]
