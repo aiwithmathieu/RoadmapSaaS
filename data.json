@@ -1776,9 +1776,9 @@
   },
   {
     "id": 70,
-    "title": "Nouvelle feature",
+    "title": "Faire audit de sécurité + activé toutes les sécurités possibles, éviter le crédite de crédits, vercel --> env en sensitive...",
     "version": "V2",
-    "difficulty": "🟢",
+    "difficulty": "🟡",
     "duration": "1j",
     "status": "📋 À faire",
     "note": "",
@@ -1798,6 +1798,6 @@
     "order": 23,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📦 Autre"
+    "group": "🔐 Auth & Sécurité"
   }
 ]
