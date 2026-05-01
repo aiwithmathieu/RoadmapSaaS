@@ -1802,7 +1802,7 @@
   },
   {
     "id": 71,
-    "title": "Nouvelle feature",
+    "title": "Vote & suggest features",
     "version": "V2",
     "difficulty": "🟢",
     "duration": "1j",
@@ -1824,6 +1824,6 @@
     "order": 24,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📦 Autre"
+    "group": "💬 Feedback & Coaching"
   }
 ]
