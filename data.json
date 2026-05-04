@@ -1906,7 +1906,7 @@
   },
   {
     "id": 75,
-    "title": "Nouvelle feature",
+    "title": "if name = empty, modal demande prénom closer",
     "version": "V1",
     "difficulty": "🟢",
     "duration": "1j",
