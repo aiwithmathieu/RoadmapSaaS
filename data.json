@@ -1932,9 +1932,9 @@
   },
   {
     "id": 76,
-    "title": "Nouvelle feature",
+    "title": "automatiquement convertir les fichiers video et lourds en fichier audio léger",
     "version": "V2",
-    "difficulty": "🟢",
+    "difficulty": "🟡",
     "duration": "1j",
     "status": "📋 À faire",
     "note": "",
@@ -1954,6 +1954,6 @@
     "order": 28,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📦 Autre"
+    "group": "⚡ Automatisation"
   }
 ]
