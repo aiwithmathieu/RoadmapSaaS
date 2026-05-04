@@ -1958,7 +1958,7 @@
   },
   {
     "id": 77,
-    "title": "Nouvelle feature",
+    "title": "Ajouter plan solo entrepreneur",
     "version": "V1",
     "difficulty": "🟢",
     "duration": "1j",
@@ -1980,6 +1980,6 @@
     "order": 36,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📦 Autre"
+    "group": "💳 Paiement"
   }
 ]
