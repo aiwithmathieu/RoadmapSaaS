@@ -2062,7 +2062,7 @@
   },
   {
     "id": 81,
-    "title": "Nouvelle feature",
+    "title": "Implémenter pack heure (non expirables) | *Booster* | 25h | 39€ | | *Turbo* | 60h | 79€ | | *Mega* | 150h | 149€ | ",
     "version": "V1",
     "difficulty": "🟢",
     "duration": "1j",
@@ -2084,6 +2084,6 @@
     "order": 38,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📦 Autre"
+    "group": "💳 Paiement"
   }
 ]
