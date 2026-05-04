@@ -1984,7 +1984,7 @@
   },
   {
     "id": 78,
-    "title": "Nouvelle feature",
+    "title": "modal : if second call --> renseigner quel était le 1er call pour faire suivi",
     "version": "V2",
     "difficulty": "🟢",
     "duration": "1j",
@@ -2006,6 +2006,6 @@
     "order": 29,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📦 Autre"
+    "group": "📊 Dashboards & UX"
   }
 ]
