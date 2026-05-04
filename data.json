@@ -2036,7 +2036,7 @@
   },
   {
     "id": 80,
-    "title": "Nouvelle feature",
+    "title": "Recalibration constants speaker ID sur 20-30 calls",
     "version": "V1",
     "difficulty": "🟢",
     "duration": "1j",
@@ -2058,6 +2058,6 @@
     "order": 37,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📦 Autre"
+    "group": "🧠 Analyse & Métriques"
   }
 ]
