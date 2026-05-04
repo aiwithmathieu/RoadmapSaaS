@@ -1828,7 +1828,7 @@
   },
   {
     "id": 72,
-    "title": "Nouvelle feature",
+    "title": "Claude ne doit que output des valeurs qui changes, pas de texte fixe.",
     "version": "V2",
     "difficulty": "🟢",
     "duration": "1j",
@@ -1850,6 +1850,6 @@
     "order": 25,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📦 Autre"
+    "group": "🤖 IA Avancée"
   }
 ]
