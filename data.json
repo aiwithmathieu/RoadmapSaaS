@@ -2088,7 +2088,7 @@
   },
   {
     "id": 82,
-    "title": "Nouvelle feature",
+    "title": "Quand abonnement résilier, déclencher séquencing email \"dommage de vous voir partir\"",
     "version": "V2",
     "difficulty": "🟢",
     "duration": "1j",
