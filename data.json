@@ -2166,9 +2166,9 @@
   },
   {
     "id": 85,
-    "title": "Nouvelle feature",
+    "title": "Prorata complet upgrade/downgrade subscription",
     "version": "V2",
-    "difficulty": "🟢",
+    "difficulty": "🟡",
     "duration": "1j",
     "status": "📋 À faire",
     "note": "",
@@ -2188,6 +2188,6 @@
     "order": 34,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📦 Autre"
+    "group": "💳 Paiement"
   }
 ]
