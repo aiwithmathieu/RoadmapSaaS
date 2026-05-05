@@ -2222,11 +2222,11 @@
   },
   {
     "id": 87,
-    "title": "Nouvelle feature",
+    "title": "Plan Solo + Free_trial 150 min + Packs personal billing",
     "version": "V1",
     "difficulty": "🟢",
     "duration": "1j",
-    "status": "📋 À faire",
+    "status": "✅ Terminé",
     "note": "",
     "stack": [
       "cursor"
@@ -2235,6 +2235,10 @@
       {
         "status": "📋 À faire",
         "date": "2026-04-21T06:38:28.183Z"
+      },
+      {
+        "status": "✅ Terminé",
+        "date": "2026-05-05T11:58:47.257Z"
       }
     ],
     "plannedStart": "",
@@ -2244,6 +2248,6 @@
     "order": 40,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📦 Autre"
+    "group": "📊 Dashboards & UX"
   }
 ]
