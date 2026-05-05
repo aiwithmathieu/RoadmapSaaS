@@ -2114,7 +2114,7 @@
   },
   {
     "id": 83,
-    "title": "Nouvelle feature",
+    "title": "afficher un modal achat crédit quand balance low ou =0",
     "version": "V2",
     "difficulty": "🟢",
     "duration": "1j",
@@ -2136,6 +2136,6 @@
     "order": 32,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📦 Autre"
+    "group": "💳 Paiement"
   }
 ]
