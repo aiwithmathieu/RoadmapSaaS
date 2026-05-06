@@ -2278,7 +2278,7 @@
   },
   {
     "id": 89,
-    "title": "Nouvelle feature",
+    "title": "Bouton rapport \"résumé\" ou \"complet\"",
     "version": "V2",
     "difficulty": "🟢",
     "duration": "1j",
@@ -2300,6 +2300,6 @@
     "order": 35,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📦 Autre"
+    "group": "📊 Dashboards & UX"
   }
 ]
