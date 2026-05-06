@@ -2356,7 +2356,7 @@
   },
   {
     "id": 92,
-    "title": "Nouvelle feature",
+    "title": "Trigger Postgres sync _tier_result → colonnes",
     "version": "V1",
     "difficulty": "🟢",
     "duration": "1j",
@@ -2378,6 +2378,6 @@
     "order": 44,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📦 Autre"
+    "group": "📞 Upload & Pipeline"
   }
 ]
