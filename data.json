@@ -2330,7 +2330,7 @@
   },
   {
     "id": 91,
-    "title": "Nouvelle feature",
+    "title": "Vercel Pro avant commercialisation",
     "version": "V1",
     "difficulty": "🟢",
     "duration": "1j",
@@ -2352,6 +2352,6 @@
     "order": 43,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📦 Autre"
+    "group": "⚡ Automatisation"
   }
 ]
