@@ -2460,7 +2460,7 @@
   },
   {
     "id": 96,
-    "title": "Nouvelle feature",
+    "title": "intégrer model privacy filter https://huggingface.co/openai/privacy-filter",
     "version": "V2",
     "difficulty": "🟢",
     "duration": "1j",
