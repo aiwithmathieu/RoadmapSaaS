@@ -2483,31 +2483,5 @@
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
     "group": "📦 Autre"
-  },
-  {
-    "id": 97,
-    "title": "Affiche un message d'erreur quand \"confirmez votre adresse mail\" est cliqué par mail",
-    "version": "V1",
-    "difficulty": "🟢",
-    "duration": "1j",
-    "status": "📋 À faire",
-    "note": "",
-    "stack": [
-      "cursor"
-    ],
-    "history": [
-      {
-        "status": "📋 À faire",
-        "date": "2026-05-14T08:27:08.398Z"
-      }
-    ],
-    "plannedStart": "",
-    "plannedEnd": "",
-    "actualStart": "",
-    "actualEnd": "",
-    "order": 46,
-    "includeWeekendPlanned": false,
-    "includeWeekendActual": false,
-    "group": "🔐 Auth & Sécurité"
   }
 ]
