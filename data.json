@@ -391,7 +391,7 @@
     "version": "V1",
     "difficulty": "🟡",
     "duration": "2-3j",
-    "status": "📋 À faire",
+    "status": "✅ Terminé",
     "note": "",
     "stack": [
       "mips",
@@ -401,6 +401,10 @@
       {
         "status": "📋 À faire",
         "date": "2026-03-17T09:44:06.636Z"
+      },
+      {
+        "status": "✅ Terminé",
+        "date": "2026-05-15T11:10:08.930Z"
       }
     ],
     "plannedStart": "2026-04-15",
