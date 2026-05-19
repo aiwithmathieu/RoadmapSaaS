@@ -2513,5 +2513,31 @@
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
     "group": "🔐 Auth & Sécurité"
+  },
+  {
+    "id": 98,
+    "title": "Nouvelle feature",
+    "version": "V2",
+    "difficulty": "🟢",
+    "duration": "1j",
+    "status": "📋 À faire",
+    "note": "",
+    "stack": [
+      "cursor"
+    ],
+    "history": [
+      {
+        "status": "📋 À faire",
+        "date": "2026-05-18T08:33:30.871Z"
+      }
+    ],
+    "plannedStart": "",
+    "plannedEnd": "",
+    "actualStart": "",
+    "actualEnd": "",
+    "order": 39,
+    "includeWeekendPlanned": false,
+    "includeWeekendActual": false,
+    "group": "📦 Autre"
   }
 ]
