@@ -2516,7 +2516,7 @@
   },
   {
     "id": 98,
-    "title": "Nouvelle feature",
+    "title": "Configurer Paddle payement",
     "version": "V2",
     "difficulty": "🟢",
     "duration": "1j",
@@ -2538,6 +2538,6 @@
     "order": 39,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📦 Autre"
+    "group": "💳 Paiement"
   }
 ]
