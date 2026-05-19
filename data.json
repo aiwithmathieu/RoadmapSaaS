@@ -2542,7 +2542,7 @@
   },
   {
     "id": 99,
-    "title": "Nouvelle feature",
+    "title": "Garder les transcriptions ?",
     "version": "V2",
     "difficulty": "🟢",
     "duration": "1j",
@@ -2564,6 +2564,6 @@
     "order": 40,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📦 Autre"
+    "group": "📊 Dashboards & UX"
   }
 ]
