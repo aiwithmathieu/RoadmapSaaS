@@ -2628,7 +2628,7 @@
   },
   {
     "id": 102,
-    "title": "Nouvelle feature",
+    "title": "caller ID ne dit pas que c'est pas la bonne personne",
     "version": "V2",
     "difficulty": "🟢",
     "duration": "1j",
@@ -2650,6 +2650,6 @@
     "order": 43,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📦 Autre"
+    "group": "🧠 Analyse & Métriques"
   }
 ]
