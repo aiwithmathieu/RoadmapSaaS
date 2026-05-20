@@ -2576,7 +2576,7 @@
   },
   {
     "id": 100,
-    "title": "Nouvelle feature",
+    "title": "commencer upload a l'upload, pas confirmation ? si modal fermé upload supprimé",
     "version": "V2",
     "difficulty": "🟢",
     "duration": "1j",
@@ -2598,6 +2598,6 @@
     "order": 41,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📦 Autre"
+    "group": "📊 Dashboards & UX"
   }
 ]
