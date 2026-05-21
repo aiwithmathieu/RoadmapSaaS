@@ -2651,5 +2651,31 @@
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
     "group": "🧠 Analyse & Métriques"
+  },
+  {
+    "id": 103,
+    "title": "Nouvelle feature",
+    "version": "V1",
+    "difficulty": "🟢",
+    "duration": "1j",
+    "status": "📋 À faire",
+    "note": "",
+    "stack": [
+      "cursor"
+    ],
+    "history": [
+      {
+        "status": "📋 À faire",
+        "date": "2026-05-21T09:36:27.591Z"
+      }
+    ],
+    "plannedStart": "",
+    "plannedEnd": "",
+    "actualStart": "",
+    "actualEnd": "",
+    "order": 47,
+    "includeWeekendPlanned": false,
+    "includeWeekendActual": false,
+    "group": "📦 Autre"
   }
 ]
