@@ -2654,7 +2654,7 @@
   },
   {
     "id": 105,
-    "title": "Nouvelle feature",
+    "title": "envoyer mail quand sub canceled pour laisser savoir + CTA 15j pour re sub",
     "version": "V2",
     "difficulty": "🟢",
     "duration": "1j",
@@ -2676,6 +2676,6 @@
     "order": 45,
     "includeWeekendPlanned": false,
     "includeWeekendActual": false,
-    "group": "📦 Autre"
+    "group": "📧 Relances & Notifications"
   }
 ]
